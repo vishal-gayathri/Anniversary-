@@ -1,0 +1,2390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seven Years. One Vow.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Tamil:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Kavivanar&family=Catamaran:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FBF3EA;
+    --paper-deep:#F3E6D8;
+    --wine:#5C1A2E;
+    --wine-deep:#3E1220;
+    --rose:#C97B84;
+    --gold:#B8934A;
+    --gold-soft:#D9BE8B;
+    --ink:#2B1B1F;
+    --blush:#F3DCD9;
+    --line: rgba(92,26,46,0.18);
+  }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0;
+    background:
+      radial-gradient(ellipse 90% 60% at 50% 0%, rgba(201,123,132,0.10), transparent 60%),
+      radial-gradient(ellipse 80% 55% at 8% 100%, rgba(184,147,74,0.10), transparent 55%),
+      linear-gradient(180deg, #FDF6EF 0%, var(--paper) 18%, var(--paper) 60%, var(--paper-deep) 100%);
+    color:var(--ink);
+    font-family:'Catamaran', sans-serif;
+    overflow-x:hidden;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important; }
+  }
+
+  h1,h2,h3, .display{
+    font-family:'Noto Serif Tamil', serif;
+    font-weight:500;
+    margin:0;
+    color:var(--wine-deep);
+  }
+  .script{
+    font-family:'Kavivanar', cursive;
+    font-weight:400;
+    color:var(--rose);
+  }
+
+  .eyebrow{
+    font-family:'Catamaran', sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.28em;
+    font-size:12px;
+    color:var(--gold);
+    font-weight:600;
+  }
+
+  section{
+    position:relative;
+    padding:min(14vw,120px) 6vw;
+  }
+
+  /* ---------- background paper texture ---------- */
+  body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:0;
+    background-image:
+      radial-gradient(circle at 20% 15%, rgba(184,147,74,0.09), transparent 38%),
+      radial-gradient(circle at 85% 8%, rgba(201,123,132,0.10), transparent 40%),
+      radial-gradient(circle at 12% 60%, rgba(201,123,132,0.07), transparent 42%),
+      radial-gradient(circle at 88% 55%, rgba(184,147,74,0.08), transparent 42%),
+      radial-gradient(circle at 25% 92%, rgba(201,123,132,0.09), transparent 45%),
+      radial-gradient(circle at 78% 96%, rgba(184,147,74,0.08), transparent 42%);
+  }
+
+  /* fine paper grain, sits above the glow but below content */
+  body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:1;
+    opacity:0.5;
+    mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='matrix' values='0 0 0 0 0.36  0 0 0 0 0.18  0 0 0 0 0.14  0 0 0 0.05 0'/></filter><rect width='140' height='140' filter='url(%23n)'/></svg>");
+  }
+
+  /* soft repeating floral watermark, very low opacity, sits behind all sections */
+  .floral-watermark{
+    position:fixed;
+    inset:0;
+    z-index:0;
+    pointer-events:none;
+    opacity:0.05;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='260' height='260'><g fill='none' stroke='%235C1A2E' stroke-width='1.1'><path d='M130 40C110 60 100 85 100 110M130 40C150 60 160 85 160 110M130 40C130 65 130 90 130 110'/><circle cx='130' cy='118' r='9'/><path d='M130 220C110 200 100 175 100 150M130 220C150 200 160 175 160 150M130 220C130 195 130 170 130 150'/><circle cx='130' cy='142' r='9'/><path d='M30 130C50 110 75 100 100 100M30 130C50 150 75 160 100 160M30 130C55 130 80 130 100 130'/><circle cx='108' cy='130' r='9'/><path d='M230 130C210 110 185 100 160 100M230 130C210 150 185 160 160 160M230 130C205 130 180 130 160 130'/><circle cx='152' cy='130' r='9'/></g></svg>");
+    background-size:260px 260px;
+  }
+
+  /* ================= HERO ================= */
+  .hero{
+    min-height:100svh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:8vw 6vw;
+    position:relative;
+  }
+  .hero .frame{
+    border:1px solid var(--line);
+    padding:min(10vw,72px) min(8vw,64px);
+    position:relative;
+    max-width:780px;
+  }
+  .hero .frame::before,
+  .hero .frame::after{
+    content:"";
+    position:absolute;
+    width:26px;
+    height:26px;
+    border:1px solid var(--gold);
+  }
+  .hero .frame::before{ top:-1px; left:-1px; border-right:none; border-bottom:none; }
+  .hero .frame::after{ bottom:-1px; right:-1px; border-left:none; border-top:none; }
+
+  .hero .kicker{
+    font-size:12px;
+    letter-spacing:0.35em;
+    text-transform:uppercase;
+    color:var(--gold);
+    font-weight:600;
+    opacity:0;
+    animation:riseIn 1s ease forwards 0.2s;
+  }
+  .hero h1{
+    font-size:clamp(42px, 8vw, 92px);
+    line-height:1.02;
+    margin:18px 0 10px;
+    opacity:0;
+    animation:riseIn 1.1s ease forwards 0.5s;
+  }
+  .hero h1 em{
+    font-style:italic;
+    color:var(--rose);
+  }
+  .hero .sub{
+    font-size:clamp(16px,2vw,20px);
+    color:var(--wine);
+    font-style:italic;
+    font-family:'Noto Serif Tamil', serif;
+    opacity:0;
+    animation:riseIn 1.1s ease forwards 0.85s;
+  }
+  .hero .years{
+    margin-top:34px;
+    display:flex;
+    gap:28px;
+    align-items:center;
+    justify-content:center;
+    opacity:0;
+    animation:riseIn 1.1s ease forwards 1.1s;
+  }
+  .years .num{
+    font-family:'Noto Serif Tamil', serif;
+    font-size:13px;
+    letter-spacing:0.13em;
+    color:var(--wine-deep);
+    max-width:120px;
+  }
+  .years .num b{
+    display:block;
+    font-size:34px;
+    color:var(--rose);
+    font-weight:600;
+  }
+  .years .div{
+    width:1px; height:44px;
+    background:var(--line);
+  }
+
+  @keyframes riseIn{
+    from{ opacity:0; transform:translateY(18px); }
+    to{ opacity:1; transform:translateY(0); }
+  }
+
+  .scroll-cue{
+    position:absolute;
+    bottom:36px;
+    left:50%;
+    transform:translateX(-50%);
+    font-size:11px;
+    letter-spacing:0.3em;
+    text-transform:uppercase;
+    color:var(--wine);
+    opacity:0.55;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:8px;
+  }
+  .scroll-cue .stem{
+    width:1px; height:30px;
+    background:linear-gradient(var(--wine), transparent);
+    animation:stemPulse 2s ease-in-out infinite;
+  }
+  @keyframes stemPulse{
+    0%,100%{ opacity:0.3; }
+    50%{ opacity:0.9; }
+  }
+
+  /* ================= VINE TIMELINE ================= */
+  .journey{
+    max-width:1000px;
+    margin:0 auto;
+  }
+  .journey-head{
+    text-align:center;
+    margin-bottom:min(10vw,90px);
+  }
+  .journey-head h2{
+    font-size:clamp(30px,5vw,52px);
+    margin-top:10px;
+  }
+  .journey-head p{
+    max-width:520px;
+    margin:16px auto 0;
+    color:var(--wine);
+    font-size:15px;
+    line-height:1.7;
+  }
+
+  /* ---------- Horizontal swipeable year tags ---------- */
+  .year-tags-wrap{
+    position:sticky;
+    top:0;
+    z-index:5;
+    background:linear-gradient(180deg, var(--paper) 70%, transparent);
+    padding:14px 0 22px;
+    margin-bottom:min(6vw,40px);
+  }
+  .year-tags{
+    display:flex;
+    gap:10px;
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+    scroll-behavior:smooth;
+    scroll-snap-type:x proximity;
+    padding:4px 6vw;
+    margin:0 -6vw;
+    /* hide scrollbar but keep touch/drag scrolling */
+    scrollbar-width:none;
+    -ms-overflow-style:none;
+  }
+  .year-tags::-webkit-scrollbar{ display:none; }
+  .year-tag{
+    flex:0 0 auto;
+    scroll-snap-align:center;
+    font-family:'Catamaran', sans-serif;
+    font-size:12px;
+    font-weight:600;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    text-decoration:none;
+    color:var(--wine);
+    background:rgba(255,255,255,0.5);
+    border:1px solid var(--line);
+    border-radius:999px;
+    padding:9px 18px;
+    white-space:nowrap;
+    transition:background .25s ease, color .25s ease, border-color .25s ease, transform .2s ease;
+    touch-action:manipulation;
+    cursor:pointer;
+  }
+  .year-tag:active{ transform:scale(0.96); }
+  .year-tag.active{
+    background:var(--wine-deep);
+    border-color:var(--wine-deep);
+    color:var(--paper);
+  }
+
+  .vine-wrap{
+    position:relative;
+  }
+  .vine-svg{
+    position:absolute;
+    top:0; left:50%;
+    transform:translateX(-50%);
+    width:3px;
+    height:100%;
+    z-index:0;
+  }
+  .vine-path{
+    stroke:var(--rose);
+    stroke-width:2;
+    fill:none;
+    stroke-dasharray:1;
+    stroke-dashoffset:1;
+    pathLength:1;
+  }
+  .vine-path.drawn{
+    animation:drawVine 1.6s ease forwards;
+  }
+  @keyframes drawVine{ to{ stroke-dashoffset:0; } }
+
+  .year-row{
+    display:grid;
+    grid-template-columns:1fr 64px 1fr;
+    align-items:center;
+    gap:0 28px;
+    position:relative;
+    z-index:1;
+    margin-bottom:min(8vw,64px);
+    opacity:0;
+    transform:translateY(24px);
+    transition:opacity 0.7s ease, transform 0.7s ease;
+  }
+  .year-row.in-view{ opacity:1; transform:translateY(0); }
+  .year-row:nth-child(even) .year-card{ grid-column:3; text-align:left; }
+  .year-row:nth-child(odd) .year-card{ grid-column:1; text-align:right; }
+  .year-card{
+    background:var(--paper-deep);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:26px 28px;
+    box-shadow:0 10px 26px rgba(62,18,32,0.10);
+    transition:transform 0.35s ease, box-shadow 0.35s ease;
+  }
+  .year-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 16px 34px rgba(62,18,32,0.16);
+  }
+  .year-row:nth-child(even) .spacer{ grid-column:1; }
+  .year-row:nth-child(odd) .spacer{ grid-column:3; }
+
+  .year-node{
+    grid-column:2;
+    width:64px;
+    height:64px;
+    border-radius:50%;
+    background:var(--paper);
+    border:1px solid var(--gold-soft);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:'Noto Serif Tamil', serif;
+    font-size:22px;
+    color:var(--wine-deep);
+    font-weight:600;
+    box-shadow:0 0 0 6px var(--paper);
+    position:relative;
+  }
+  .year-row.in-view .year-node{
+    animation:nodePulse 0.6s ease;
+  }
+  @keyframes nodePulse{
+    0%{ transform:scale(0.6); }
+    60%{ transform:scale(1.12); }
+    100%{ transform:scale(1); }
+  }
+
+  .year-card h3{
+    font-size:clamp(19px,2.4vw,24px);
+    font-style:italic;
+    color:var(--rose);
+    margin-bottom:6px;
+  }
+  .year-card p{
+    font-size:14.5px;
+    line-height:1.75;
+    color:var(--ink);
+    margin:0;
+  }
+
+  @media (max-width:640px){
+    .year-row{
+      grid-template-columns:44px 1fr;
+      gap:0 16px;
+    }
+    .year-node{
+      grid-column:1;
+      width:44px; height:44px; font-size:16px;
+    }
+    .year-row:nth-child(even) .year-card,
+    .year-row:nth-child(odd) .year-card{
+      grid-column:2;
+      text-align:left;
+    }
+    .spacer{ display:none; }
+    .vine-svg{ left:22px; }
+  }
+
+  /* ================= VOW TRANSITION ================= */
+  .vow{
+    text-align:center;
+    background:var(--wine-deep);
+    color:var(--paper);
+    padding:min(16vw,140px) 6vw;
+    position:relative;
+    overflow:hidden;
+  }
+  .vow::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+      radial-gradient(circle at 50% 0%, rgba(201,123,132,0.25), transparent 55%);
+  }
+  .vow-inner{ position:relative; max-width:640px; margin:0 auto; }
+  .vow .script{ font-size:clamp(30px,5vw,48px); color:var(--gold-soft); }
+  .vow h2{
+    color:var(--paper);
+    font-size:clamp(28px,5vw,46px);
+    font-style:italic;
+    margin:14px 0 22px;
+    line-height:1.3;
+  }
+  .vow p{
+    color:rgba(251,243,234,0.75);
+    font-size:14.5px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+  }
+
+  /* ================= YEAR ONE BLOOM ================= */
+  .bloom{
+    text-align:center;
+    max-width:820px;
+    margin:0 auto;
+  }
+  .bloom-mark{
+    width:64px; height:64px;
+    margin:0 auto 22px;
+    color:var(--rose);
+  }
+  .bloom h2{
+    font-size:clamp(34px,6vw,58px);
+  }
+  .bloom .sub{
+    color:var(--wine);
+    font-family:'Noto Serif Tamil', serif;
+    font-style:italic;
+    font-size:18px;
+    margin-top:10px;
+  }
+  .bloom-letter{
+    margin-top:52px;
+    text-align:left;
+    background:var(--blush);
+    border:1px solid rgba(92,26,46,0.12);
+    padding:min(8vw,56px);
+    position:relative;
+    line-height:1.9;
+    font-size:16px;
+    color:var(--ink);
+  }
+  .bloom-letter::before{
+    content:"";
+    position:absolute;
+    top:-1px; left:32px;
+    width:60px; height:3px;
+    background:var(--gold);
+  }
+  .bloom-letter p{ margin:0 0 18px; }
+  .bloom-letter p:last-child{ margin-bottom:0; }
+  .bloom-letter .sign{
+    font-family:'Kavivanar', cursive;
+    font-size:26px;
+    color:var(--rose);
+    margin-top:8px;
+    display:inline-block;
+  }
+
+  /* ================= WISH CARDS ================= */
+  .wishes{
+    max-width:1100px;
+    margin:0 auto;
+  }
+  .wishes-head{
+    text-align:center;
+    margin-bottom:min(8vw,64px);
+  }
+  .wishes-head h2{ font-size:clamp(30px,5vw,50px); }
+
+  .wish-grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  .wish-card{
+    background:var(--paper);
+    padding:40px 30px;
+    opacity:0;
+    transform:translateY(20px);
+    transition:opacity 0.6s ease, transform 0.6s ease;
+  }
+  .wish-card.in-view{ opacity:1; transform:translateY(0); }
+  .wish-card .n{
+    font-family:'Noto Serif Tamil', serif;
+    font-style:italic;
+    color:var(--gold);
+    font-size:14px;
+    margin-bottom:14px;
+    display:block;
+  }
+  .wish-card h3{
+    font-size:22px;
+    font-style:italic;
+    margin-bottom:10px;
+    color:var(--wine-deep);
+  }
+  .wish-card p{
+    font-size:14px;
+    line-height:1.75;
+    color:var(--ink);
+    margin:0;
+  }
+  @media (max-width:820px){
+    .wish-grid{ grid-template-columns:1fr; }
+  }
+
+  /* ================= FOOTER ================= */
+  footer{
+    text-align:center;
+    padding:min(14vw,110px) 6vw min(10vw,70px);
+  }
+  footer .script{
+    font-size:clamp(30px,5vw,44px);
+    display:block;
+    margin-bottom:14px;
+  }
+  footer p{
+    color:var(--wine);
+    font-size:13px;
+    letter-spacing:0.15em;
+    text-transform:uppercase;
+  }
+  footer .names{
+    font-family:'Noto Serif Tamil', serif;
+    font-style:italic;
+    font-size:20px;
+    letter-spacing:0.04em;
+    text-transform:none;
+    color:var(--wine-deep);
+    margin-bottom:10px;
+  }
+  footer .heart-inline{
+    font-size:16px;
+  }
+  footer .heart{
+    margin-top:26px;
+    color:#000000;
+  }
+
+  /* ================= FLOATING PETALS (ambient background) ================= */
+  .petal-field{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:2;
+    overflow:hidden;
+  }
+  .petal{
+    position:absolute;
+    top:-8vh;
+    opacity:0;
+    animation-name:petalFall;
+    animation-timing-function:ease-in;
+    animation-iteration-count:infinite;
+    will-change:transform;
+  }
+  .petal svg{ display:block; filter:drop-shadow(0 3px 6px rgba(92,26,46,0.12)); }
+  @keyframes petalFall{
+    0%{
+      transform:translate(0,0) rotate(0deg);
+      opacity:0;
+    }
+    6%{ opacity:0.9; }
+    50%{
+      transform:translate(var(--drift,40px), 55vh) rotate(180deg);
+    }
+    90%{ opacity:0.85; }
+    100%{
+      transform:translate(calc(var(--drift,40px) * 2), 112vh) rotate(360deg);
+      opacity:0;
+    }
+  }
+
+  /* ================= YEAR PHOTO + QUOTE (all years) ================= */
+  /* .y7-photos is the gallery wrapper — add or remove .y7-photo blocks
+     inside it to change how many photos show for that year. Works fine
+     with 1, 2, 3 or more photos; extras simply wrap onto a new line. */
+  .year-card .y7-photos{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:16px;
+    margin-bottom:14px;
+  }
+  .year-row:nth-child(odd) .y7-photos{ justify-content:flex-end; }
+  .year-row:nth-child(even) .y7-photos{ justify-content:flex-start; }
+  .year-card .y7-photo{
+    margin:0;
+    display:block;
+    width:140px;
+    border:6px solid var(--paper);
+    outline:1px solid var(--gold-soft);
+    box-shadow:0 14px 30px rgba(62,18,32,0.22);
+    transform:rotate(-2deg);
+    transition:transform 0.4s ease;
+  }
+  .year-row:nth-child(odd) .y7-photo{ transform:rotate(2deg); }
+  .y7-photo:nth-child(2n){ transform:rotate(-3deg); }
+  .y7-photo:hover{ transform:rotate(0deg) scale(1.06); z-index:2; }
+  .y7-photo img{
+    display:block;
+    width:100%;
+    height:140px;
+    object-fit:cover;
+  }
+  @media (max-width:640px){
+    .year-row:nth-child(odd) .y7-photos,
+    .year-row:nth-child(even) .y7-photos{ justify-content:flex-start; }
+    .year-card .y7-photo{ width:120px; }
+    .year-card .y7-photo img{ height:120px; }
+  }
+
+  /* ---- Swipeable / auto-advancing photo carousel (e.g. Year Two) ---- */
+  .y7-carousel{
+    width:160px;
+    margin:0;
+  }
+  .y7-carousel-viewport{
+    overflow:hidden;
+    border:6px solid var(--paper);
+    outline:1px solid var(--gold-soft);
+    box-shadow:0 14px 30px rgba(62,18,32,0.22);
+    transform:rotate(-2deg);
+    cursor:grab;
+  }
+  .year-row:nth-child(odd) .y7-carousel-viewport{ transform:rotate(2deg); }
+  .y7-carousel-viewport:active{ cursor:grabbing; }
+  .y7-carousel-track{
+    display:flex;
+    touch-action:pan-y;
+    user-select:none;
+  }
+  .y7-carousel-track.dragging{ transition:none !important; }
+  .y7-carousel-slide{
+    flex:0 0 100%;
+  }
+  .y7-carousel-slide img{
+    display:block;
+    width:100%;
+    height:160px;
+    object-fit:cover;
+    cursor:pointer;
+    -webkit-user-drag:none;
+    pointer-events:none;
+  }
+  .y7-carousel-dots{
+    display:flex;
+    gap:6px;
+    justify-content:center;
+    margin-top:8px;
+  }
+  .y7-carousel-dot{
+    width:6px;
+    height:6px;
+    border-radius:50%;
+    background:var(--gold-soft);
+    opacity:0.5;
+    cursor:pointer;
+    transition:opacity 0.25s ease, transform 0.25s ease;
+  }
+  .y7-carousel-dot.active{ opacity:1; background:var(--wine); transform:scale(1.25); }
+  @media (max-width:640px){
+    .y7-carousel{ width:120px; }
+    .y7-carousel-slide img{ height:120px; }
+  }
+  .y7-quote{
+    margin-top:14px;
+    font-family:'Kavivanar', cursive;
+    font-size:20px;
+    line-height:1.4;
+    color:var(--rose);
+  }
+
+  /* ---- Per-photo caption inside each carousel slide ---- */
+  .y7-carousel-slide{
+    display:flex;
+    flex-direction:column;
+  }
+  .y7-slide-cap{
+    padding:6px 4px 2px;
+    text-align:center;
+  }
+  .y7-cap-en{
+    display:block;
+    font-family:'Catamaran', sans-serif;
+    font-size:9px;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    color:var(--gold);
+    font-weight:600;
+  }
+  .y7-cap-ta{
+    display:block;
+    font-family:'Kavivanar', cursive;
+    font-size:13px;
+    color:var(--ink);
+    line-height:1.25;
+    margin-top:2px;
+  }
+  @media (max-width:640px){
+    .y7-cap-en{ font-size:8px; }
+    .y7-cap-ta{ font-size:12px; }
+  }
+
+  /* ================= GIFT GATE (intro) ================= */
+  html.locked, html.locked body{ overflow:hidden; height:100%; }
+  .gift-gate{
+    position:fixed;
+    inset:0;
+    z-index:999;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    background:
+      radial-gradient(circle at 50% 22%, rgba(201,123,132,0.22), transparent 55%),
+      var(--wine-deep);
+    cursor:pointer;
+    transition:opacity 0.9s ease 0.15s, visibility 0.9s ease 0.15s;
+  }
+  .gift-gate.hidden{
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+  }
+  .gift-gate .prompt{
+    font-family:'Noto Serif Tamil', serif;
+    font-style:italic;
+    color:var(--gold-soft);
+    font-size:clamp(15px,2.4vw,19px);
+    letter-spacing:0.04em;
+    margin-top:34px;
+    opacity:0.9;
+    animation:promptFloat 2.4s ease-in-out infinite;
+  }
+  .gift-gate.opening .prompt{ opacity:0; transition:opacity 0.3s ease; }
+  @keyframes promptFloat{
+    0%,100%{ transform:translateY(0); opacity:0.65; }
+    50%{ transform:translateY(-6px); opacity:1; }
+  }
+  .gift-gate .kicker2{
+    font-family:'Catamaran', sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.32em;
+    font-size:11px;
+    color:var(--gold-soft);
+    opacity:0.75;
+    margin-bottom:26px;
+  }
+
+  .gift-box{
+    position:relative;
+    width:180px;
+    height:150px;
+  }
+  .gift-box .lid{
+    position:absolute;
+    top:-26px; left:-14px;
+    width:208px;
+    height:36px;
+    background:linear-gradient(180deg, var(--rose), var(--wine));
+    border-radius:4px;
+    box-shadow:0 6px 14px rgba(0,0,0,0.35);
+    transform-origin:10% 100%;
+    transition:transform 0.9s cubic-bezier(.6,-0.2,.3,1.4), opacity 0.6s ease 0.5s;
+    z-index:3;
+  }
+  .gift-box .lid::before{
+    content:"";
+    position:absolute;
+    left:50%; top:-16px;
+    transform:translateX(-50%);
+    width:34px; height:34px;
+    background:var(--gold-soft);
+    border-radius:50% 50% 0 0 / 60% 60% 0 0;
+    box-shadow:-26px 6px 0 -6px var(--gold-soft), 26px 6px 0 -6px var(--gold-soft);
+  }
+  .gift-box .base{
+    position:absolute;
+    top:10px; left:0;
+    width:180px;
+    height:140px;
+    background:linear-gradient(160deg, #6b2038, var(--wine-deep));
+    border-radius:3px;
+    box-shadow:0 18px 40px rgba(0,0,0,0.4), inset 0 0 0 1px rgba(217,190,139,0.25);
+    overflow:hidden;
+  }
+  .gift-box .ribbon-v{
+    position:absolute;
+    top:0; left:50%;
+    transform:translateX(-50%);
+    width:22px;
+    height:100%;
+    background:linear-gradient(90deg, var(--gold-soft), var(--gold) 50%, var(--gold-soft));
+  }
+  .gift-box .ribbon-h{
+    position:absolute;
+    top:44%; left:0;
+    width:100%;
+    height:20px;
+    background:linear-gradient(180deg, var(--gold-soft), var(--gold) 50%, var(--gold-soft));
+  }
+  .gift-box .shine{
+    position:absolute;
+    top:0; left:14px;
+    width:18px; height:100%;
+    background:linear-gradient(180deg, rgba(255,255,255,0.16), transparent 60%);
+  }
+
+  /* opening sequence */
+  .gift-gate.opening .gift-box .lid{
+    transform:translateY(-90px) rotate(-52deg);
+    opacity:0;
+  }
+  .gift-gate.opening .gift-box .base{
+    animation:boxDrop 0.7s ease-in 0.15s forwards;
+  }
+  @keyframes boxDrop{
+    0%{ transform:scale(1); opacity:1; }
+    60%{ transform:scale(1.05); opacity:1; }
+    100%{ transform:scale(0.86) translateY(30px); opacity:0; }
+  }
+  .gift-gate.opening .kicker2{
+    transition:opacity 0.35s ease;
+    opacity:0;
+  }
+
+  /* burst petals released on open */
+  .burst-petal{
+    position:absolute;
+    left:50%; top:46%;
+    font-size:20px;
+    line-height:1;
+    opacity:0;
+    pointer-events:none;
+    user-select:none;
+  }
+  .gift-gate.opening .burst-petal{
+    animation:burstOut 1.1s ease-out forwards;
+  }
+  @keyframes burstOut{
+    0%{ transform:translate(-50%,-50%) scale(0.3) rotate(0deg); opacity:1; }
+    100%{ transform:translate(calc(-50% + var(--bx,0px)), calc(-50% + var(--by,-160px))) scale(1) rotate(var(--br,220deg)); opacity:0; }
+  }
+
+  /* ================= HEART GATE (particle heart-formation scene) ================= */
+  .heart-gate{
+    position:fixed;
+    inset:0;
+    z-index:998;
+    overflow:hidden;
+    background:#050203;
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+    transition:opacity 0.9s ease, visibility 0.9s ease;
+  }
+  .heart-gate.active{
+    opacity:1;
+    visibility:visible;
+    pointer-events:auto;
+  }
+  .heart-gate.fading{
+    opacity:0;
+  }
+  .heart-gate canvas{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    display:block;
+  }
+  .heart-gate .heart-overlay{
+    position:absolute;
+    inset:0;
+    z-index:2;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:0 8vw;
+    pointer-events:none;
+  }
+  .heart-gate .heart-tagline{
+    font-family:'Noto Serif Tamil', serif;
+    font-weight:500;
+    color:rgba(251,243,234,0);
+    font-size:clamp(11px,4.2vw,42px);
+    letter-spacing:0.5px;
+    line-height:1.45;
+    transition:color 0.1s, font-size 0.2s;
+  }
+  .heart-gate .heart-caption{
+    position:absolute;
+    left:0; right:0;
+    bottom:14vh;
+    z-index:3;
+    font-family:'Noto Serif Tamil', serif;
+    font-style:italic;
+    color:var(--gold-soft);
+    font-size:clamp(14px,2.2vw,18px);
+    letter-spacing:0.03em;
+    opacity:0;
+    text-align:center;
+    padding:0 24px;
+    transition:opacity 0.8s ease;
+  }
+  .heart-gate .heart-caption.show{ opacity:0.9; }
+  .heart-gate .heart-skip{
+    position:absolute;
+    top:20px; right:20px;
+    z-index:4;
+    font-family:'Catamaran', sans-serif;
+    font-size:11px;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--gold-soft);
+    opacity:0.55;
+    background:none;
+    border:1px solid rgba(217,190,139,0.35);
+    border-radius:20px;
+    padding:8px 16px;
+    cursor:pointer;
+  }
+  .heart-gate .heart-skip:active{ opacity:0.9; }
+
+  .site-content{
+    opacity:0;
+    transform:translateY(14px);
+    transition:opacity 1s ease, transform 1s ease;
+  }
+  .site-content.revealed{
+    opacity:1;
+    transform:translateY(0);
+  }
+  /* ================= PHOTO LIGHTBOX (WhatsApp-style tap to view) ================= */
+  .y7-photo{ cursor:zoom-in; }
+  .lightbox-overlay{
+    position:fixed;
+    inset:0;
+    z-index:999;
+    background:rgba(20,8,12,0.92);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    opacity:0;
+    visibility:hidden;
+    transition:opacity 0.28s ease;
+  }
+  .lightbox-overlay.open{
+    opacity:1;
+    visibility:visible;
+  }
+  .lightbox-overlay img{
+    max-width:88vw;
+    max-height:82vh;
+    border-radius:6px;
+    box-shadow:0 20px 60px rgba(0,0,0,0.5);
+    transform:scale(0.85);
+    transition:transform 0.28s ease;
+  }
+  .lightbox-overlay.open img{
+    transform:scale(1);
+  }
+  .lightbox-nav{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:44px;
+    height:44px;
+    border-radius:50%;
+    background:rgba(255,255,255,0.12);
+    border:none;
+    color:#fff;
+    font-size:18px;
+    line-height:1;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:background 0.2s ease;
+    z-index:1000;
+  }
+  .lightbox-nav:hover{ background:rgba(255,255,255,0.24); }
+  .lightbox-prev{ left:16px; }
+  .lightbox-next{ right:16px; }
+  .lightbox-counter{
+    position:absolute;
+    bottom:22px;
+    left:50%;
+    transform:translateX(-50%);
+    color:rgba(255,255,255,0.9);
+    font-family:'Catamaran',sans-serif;
+    font-size:13px;
+    letter-spacing:0.04em;
+    background:rgba(0,0,0,0.35);
+    padding:5px 14px;
+    border-radius:20px;
+    z-index:1000;
+  }
+  @media (max-width:640px){
+    .lightbox-nav{ width:38px; height:38px; font-size:15px; }
+    .lightbox-prev{ left:8px; }
+    .lightbox-next{ right:8px; }
+  }
+  .lightbox-close{
+    position:absolute;
+    top:24px;
+    right:24px;
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    background:rgba(255,255,255,0.12);
+    color:#F3E6D8;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:22px;
+    cursor:pointer;
+    border:none;
+  }
+
+  /* ================= YEAR SEVEN — SWIPEABLE PHOTO STORY ================= */
+  .photo-story{
+    max-width:1000px;
+    margin:0 auto;
+  }
+  .photo-story-head{
+    text-align:center;
+    margin-bottom:min(7vw,50px);
+  }
+  .photo-story-head h2{ font-size:clamp(30px,5vw,50px); }
+  .photo-story-head p{
+    max-width:520px;
+    margin:14px auto 0;
+    color:var(--wine);
+    font-size:14.5px;
+    line-height:1.7;
+  }
+  .swipe-hint{
+    text-align:center;
+    font-family:'Kavivanar', cursive;
+    font-size:20px;
+    color:var(--rose);
+    margin:-6px 0 26px;
+  }
+  .swipe-hint svg{ vertical-align:-4px; margin-left:6px; }
+
+  .strip{
+    display:flex;
+    gap:26px;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    padding:8px 6vw 30px;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:thin;
+    scrollbar-color:var(--rose) transparent;
+  }
+  .strip::-webkit-scrollbar{ height:6px; }
+  .strip::-webkit-scrollbar-thumb{ background:var(--rose); border-radius:8px; }
+
+  .polaroid{
+    flex:0 0 auto;
+    scroll-snap-align:center;
+    width:230px;
+    background:#fffdf9;
+    padding:12px 12px 18px;
+    border-radius:2px;
+    box-shadow:0 14px 30px rgba(62,18,32,0.22);
+    transform:rotate(var(--r));
+    transition:transform 0.35s ease;
+    cursor:zoom-in;
+  }
+  .polaroid:hover{ transform:rotate(0deg) scale(1.035); }
+  .polaroid img{
+    width:100%;
+    height:270px;
+    object-fit:cover;
+    display:block;
+    background:#ddd;
+  }
+  .polaroid .p-cap{
+    padding-top:12px;
+    text-align:center;
+  }
+  .polaroid .p-date{
+    display:block;
+    font-family:'Catamaran', sans-serif;
+    font-size:10px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--gold);
+    font-weight:600;
+    margin-bottom:3px;
+  }
+  .polaroid .p-text{
+    font-family:'Kavivanar', cursive;
+    font-size:19px;
+    color:var(--ink);
+    line-height:1.15;
+  }
+
+  .strip-progress{
+    max-width:260px;
+    margin:2px auto 0;
+    height:3px;
+    border-radius:3px;
+    background:rgba(92,26,46,0.14);
+    overflow:hidden;
+  }
+  .strip-progress-bar{
+    height:100%;
+    width:6%;
+    background:var(--rose);
+    border-radius:3px;
+    transition:width 0.15s linear;
+  }
+
+  @media (max-width:480px){
+    .polaroid{ width:200px; }
+    .polaroid img{ height:235px; }
+  }
+
+  .yr-tag{
+    display:inline-block;
+    font-family:'Catamaran', sans-serif;
+    font-size:10.5px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--gold);
+    font-weight:600;
+    margin-bottom:4px;
+  }
+  .yr-quote{
+    display:block;
+    margin-top:10px;
+    font-family:'Kavivanar', cursive;
+    font-size:17px;
+    color:var(--rose);
+    line-height:1.25;
+  }
+
+  .yr-more-btn{
+    display:inline-block;
+    margin-top:12px;
+    padding:6px 16px;
+    border:1px solid var(--gold-soft);
+    border-radius:999px;
+    background:transparent;
+    color:var(--wine);
+    font-family:'Catamaran', sans-serif;
+    font-size:12px;
+    font-weight:600;
+    letter-spacing:0.05em;
+    cursor:pointer;
+    transition:background 0.25s ease, color 0.25s ease;
+  }
+  .yr-more-btn:hover{ background:var(--wine); color:var(--paper); }
+  .yr-more-content{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height 0.45s ease, margin-top 0.45s ease;
+  }
+  .yr-more-content.open{
+    max-height:400px;
+    margin-top:4px;
+  }
+
+  /* ================= LOVE NOTES (surprise quotes) ================= */
+  .notes{
+    max-width:820px;
+    margin:0 auto;
+  }
+  .notes-head{
+    text-align:center;
+    margin-bottom:min(8vw,56px);
+  }
+  .notes-head h2{ font-size:clamp(30px,5vw,50px); }
+  .note-grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:22px;
+  }
+  .note-card{
+    background:var(--blush);
+    border:1px solid rgba(92,26,46,0.12);
+    padding:28px 24px;
+    position:relative;
+    text-align:center;
+  }
+  .note-card::before{
+    content:"\201C";
+    font-family:'Noto Serif Tamil', serif;
+    font-size:52px;
+    color:var(--gold-soft);
+    display:block;
+    line-height:0.6;
+    margin-bottom:10px;
+  }
+  .note-card p{
+    font-family:'Kavivanar', cursive;
+    font-size:21px;
+    color:var(--wine-deep);
+    line-height:1.35;
+    margin:0 0 10px;
+  }
+  .note-card span{
+    font-family:'Catamaran', sans-serif;
+    font-size:11px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--gold);
+    font-weight:600;
+  }
+  @media (max-width:640px){
+    .note-grid{ grid-template-columns:1fr; }
+  }
+
+  /* ================= FLYING ROBOT MASCOT ================= */
+  .anniv-robot{
+    position:fixed;
+    top:16px;
+    right:16px;
+    z-index:500;
+    cursor:pointer;
+    animation:robotFloat 3.6s ease-in-out infinite;
+    -webkit-tap-highlight-color:transparent;
+  }
+  @keyframes robotFloat{
+    0%,100%{ transform:translateY(0) rotate(-3deg); }
+    50%{ transform:translateY(-12px) rotate(3deg); }
+  }
+  .robot-svg{
+    width:58px;
+    height:64px;
+    display:block;
+    filter:drop-shadow(0 8px 14px rgba(62,18,32,0.28));
+  }
+  .robot-eye-blink{
+    transform-box:fill-box;
+    transform-origin:center;
+    animation:robotBlink 4.2s ease-in-out infinite;
+  }
+  @keyframes robotBlink{
+    0%,92%,100%{ transform:scaleY(1); }
+    95%{ transform:scaleY(0.12); }
+  }
+  .robot-thrust{
+    transform-box:fill-box;
+    transform-origin:center;
+    animation:robotThrust 0.7s ease-in-out infinite alternate;
+  }
+  .robot-arm-wave{
+    transform-box:fill-box;
+    transform-origin:top center;
+    animation:robotWave 1.8s ease-in-out infinite;
+  }
+  @keyframes robotWave{
+    0%,100%{ transform:rotate(-8deg); }
+    50%{ transform:rotate(24deg); }
+  }
+  .robot-antenna-heart{
+    transform-box:fill-box;
+    transform-origin:center;
+    animation:robotHeartPulse 1.6s ease-in-out infinite;
+  }
+  @keyframes robotHeartPulse{
+    0%,100%{ transform:scale(1); }
+    50%{ transform:scale(1.18); }
+  }
+  @keyframes robotThrust{
+    0%{ opacity:0.35; transform:scaleY(0.7); }
+    100%{ opacity:0.9; transform:scaleY(1.15); }
+  }
+  .robot-bubble{
+    position:absolute;
+    top:calc(100% + 10px);
+    right:0;
+    min-width:190px;
+    max-width:min(64vw,240px);
+    background:var(--paper);
+    border:1px solid var(--gold-soft);
+    color:var(--wine-deep);
+    font-family:'Noto Serif Tamil', serif;
+    font-style:italic;
+    font-size:15px;
+    line-height:1.4;
+    text-align:center;
+    padding:12px 16px;
+    border-radius:12px;
+    box-shadow:0 10px 24px rgba(62,18,32,0.22);
+    opacity:0;
+    transform:translateY(6px) scale(0.94);
+    pointer-events:none;
+    transition:opacity 0.3s ease, transform 0.3s ease;
+  }
+  .robot-bubble::after{
+    content:"";
+    position:absolute;
+    top:-7px;
+    right:22px;
+    width:12px;
+    height:12px;
+    background:var(--paper);
+    border-left:1px solid var(--gold-soft);
+    border-top:1px solid var(--gold-soft);
+    transform:rotate(45deg);
+  }
+  .anniv-robot.show-bubble .robot-bubble{
+    opacity:1;
+    transform:translateY(0) scale(1);
+  }
+  @media (max-width:640px){
+    .anniv-robot{ top:12px; right:10px; }
+    .robot-svg{ width:48px; height:54px; }
+  }
+
+  /* ================= LANGUAGE TOGGLE ================= */
+  .lang-toggle{
+    position:fixed;
+    top:14px;
+    left:14px;
+    z-index:1002;
+    font-family:'Catamaran', sans-serif;
+    font-weight:600;
+    font-size:13px;
+    letter-spacing:0.04em;
+    color:var(--paper);
+    background:var(--wine-deep);
+    border:1px solid var(--gold-soft);
+    border-radius:999px;
+    padding:8px 16px;
+    cursor:pointer;
+    box-shadow:0 6px 16px rgba(0,0,0,0.25);
+    transition:transform 0.2s ease, background 0.2s ease;
+  }
+  .lang-toggle:hover{ transform:translateY(-1px); background:var(--wine); }
+  .lang-toggle:active{ transform:scale(0.96); }
+
+  /* ================= AUDIO PLAY BUTTON ================= */
+  .audio-toggle{
+    position:fixed;
+    top:58px;
+    left:14px;
+    z-index:1002;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:38px;
+    height:38px;
+    font-family:'Catamaran', sans-serif;
+    color:var(--paper);
+    background:var(--wine-deep);
+    border:1px solid var(--gold-soft);
+    border-radius:999px;
+    cursor:pointer;
+    box-shadow:0 6px 16px rgba(0,0,0,0.25);
+    transition:transform 0.2s ease, background 0.2s ease;
+  }
+  .audio-toggle:hover{ transform:translateY(-1px); background:var(--wine); }
+  .audio-toggle:active{ transform:scale(0.96); }
+  .audio-toggle svg{ width:16px; height:16px; display:block; }
+</style>
+</head>
+<body class="locked">
+<!-- ================= LANGUAGE TOGGLE ================= -->
+<button id="langToggle" class="lang-toggle" type="button" aria-label="Switch language / மொழி மாற்று">EN</button>
+<button id="audioToggle" class="audio-toggle" type="button" aria-label="Play song / பாடலை இயக்க">
+  <svg id="audioIconPlay" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+  <svg id="audioIconPause" viewBox="0 0 24 24" fill="currentColor" style="display:none;"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+</button>
+<audio id="bgAudio" preload="none" loop src="https://drive.google.com/uc?export=download&id=12jn_riy7o6u_q3f0z9qI-Y9rZXBlZq9o"></audio>
+
+
+<!-- ================= GIFT GATE (tap to open) ================= -->
+<div class="gift-gate" id="giftGate">
+  <div id="t1" class="kicker2">உனக்காக ஒரு பரிசு</div>
+  <div class="gift-box" id="giftBox">
+    <div class="lid"></div>
+    <div class="base">
+      <div class="ribbon-v"></div>
+      <div class="ribbon-h"></div>
+      <div class="shine"></div>
+    </div>
+    <div class="burst-wrap" id="burstWrap"></div>
+  </div>
+  <div id="t2" class="prompt">&#128420; உன் ஆண்டு விழா கடிதத்தைத் திறக்க தொடு</div>
+</div>
+
+<!-- ================= HEART GATE (turtle-art heart draws itself) ================= -->
+<div class="heart-gate" id="heartGate">
+  <button id="t115" class="heart-skip" type="button">Skip</button>
+  <canvas id="heartCanvas"></canvas>
+  <div class="heart-overlay"><div id="heartTagline" class="heart-tagline"></div></div>
+  <div id="t116" class="heart-caption">Every line, seven years in the making.</div>
+</div>
+
+<div class="floral-watermark"></div>
+<div class="petal-field" id="petalField"></div>
+
+<!-- ================= FLYING ROBOT MASCOT ================= -->
+<div class="anniv-robot" id="annivRobot" role="button" tabindex="0" aria-label="ஒரு செய்திக்காக சிறிய ரோபோவைத் தொடவும்">
+  <div class="robot-bubble" id="robotBubble">இனிய ஆண்டு விழா,<br>தி குள்ளாச்சி! &#128420;</div>
+  <svg class="robot-svg" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
+    <!-- antenna with tiny heart topper -->
+    <line x1="50" y1="12" x2="50" y2="3" stroke="var(--gold)" stroke-width="3" stroke-linecap="round"/>
+    <path class="robot-antenna-heart" d="M50 8C50 8 46.5 5.5 46.5 3C46.5 1.3 48 0.4 49.4 1.2C49.8 1.4 50 1.8 50 2.2C50 1.8 50.2 1.4 50.6 1.2C52 0.4 53.5 1.3 53.5 3C53.5 5.5 50 8 50 8Z" fill="var(--rose)"/>
+    <!-- static arm (right side, on robot's left as viewed) -->
+    <ellipse cx="82" cy="62" rx="8" ry="15" fill="var(--gold-soft)" transform="rotate(14 82 62)"/>
+    <!-- waving arm (left side, on robot's right as viewed) -->
+    <g class="robot-arm-wave">
+      <ellipse cx="18" cy="60" rx="8" ry="16" fill="var(--gold-soft)"/>
+    </g>
+    <!-- head, extra round and big for chibi cuteness -->
+    <rect x="24" y="8" width="52" height="42" rx="18" fill="var(--paper)" stroke="var(--gold)" stroke-width="2.5"/>
+    <!-- blush cheeks -->
+    <ellipse cx="34" cy="34" rx="6" ry="4" fill="var(--rose)" opacity="0.55"/>
+    <ellipse cx="66" cy="34" rx="6" ry="4" fill="var(--rose)" opacity="0.55"/>
+    <!-- big sparkly eyes -->
+    <circle cx="40" cy="27" r="6.5" fill="var(--wine-deep)"/>
+    <circle class="robot-eye-blink" cx="60" cy="27" r="6.5" fill="var(--wine-deep)"/>
+    <circle cx="42.3" cy="24.3" r="2" fill="#FFFFFF"/>
+    <circle class="robot-eye-blink" cx="62.3" cy="24.3" r="2" fill="#FFFFFF"/>
+    <circle cx="38" cy="29.5" r="0.9" fill="#FFFFFF" opacity="0.8"/>
+    <circle class="robot-eye-blink" cx="58" cy="29.5" r="0.9" fill="#FFFFFF" opacity="0.8"/>
+    <!-- happy open smile -->
+    <path d="M39 37 Q50 46 61 37" stroke="var(--rose)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <!-- body, softened and slightly smaller relative to head -->
+    <rect x="24" y="50" width="52" height="42" rx="18" fill="var(--blush)" stroke="var(--wine)" stroke-width="2.5"/>
+    <!-- heart on chest -->
+    <path d="M50 71C50 71 42.5 66.3 42.5 60.6C42.5 57.3 45.3 55.4 48.1 56.8C49.1 57.4 49.6 58.3 50 59.3C50.4 58.3 50.9 57.4 51.9 56.8C54.7 55.4 57.5 57.3 57.5 60.6C57.5 66.3 50 71 50 71Z" fill="var(--wine-deep)"/>
+    <!-- legs -->
+    <rect x="32" y="92" width="12" height="15" rx="5" fill="var(--gold-soft)"/>
+    <rect x="56" y="92" width="12" height="15" rx="5" fill="var(--gold-soft)"/>
+    <!-- flight thrust -->
+    <ellipse class="robot-thrust" cx="38" cy="110" rx="5" ry="7" fill="var(--rose)" opacity="0.7"/>
+    <ellipse class="robot-thrust" cx="62" cy="110" rx="5" ry="7" fill="var(--gold)" opacity="0.7"/>
+  </svg>
+</div>
+
+<div class="lightbox-overlay" id="lightboxOverlay" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox(event)" aria-label="மூடு">&#10005;</button>
+  <button class="lightbox-nav lightbox-prev" onclick="lightboxPrev(event)" aria-label="Previous photo">&#10094;</button>
+  <img id="lightboxImg" src="" alt="Full screen photo" onclick="event.stopPropagation()">
+  <button class="lightbox-nav lightbox-next" onclick="lightboxNext(event)" aria-label="Next photo">&#10095;</button>
+  <div class="lightbox-counter" id="lightboxCounter"></div>
+</div>
+
+<div class="site-content" id="siteContent">
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="frame">
+    <div id="t4" class="kicker">வருடங்களில் எழுதப்பட்ட ஒரு கடிதம்</div>
+    <h1 id="t5">ஏழு வருடங்கள் <em>காதலித்தேன்.</em><br>முதல் <em>ஆண்டு விழா.</em></h1>
+    <p id="t6" class="sub">ஒவ்வொரு சாதாரண வருடத்தையும் நினைவில் நிற்கும் ஓர் அத்தியாயமாக மாற்றியவளுக்காக</p>
+    <div class="years">
+      <div id="t7" class="num">காதல்<b>7</b></div>
+      <div class="div"></div>
+      <div id="t8" class="num">முதல் ஆண்டு விழா<b>1</b></div>
+    </div>
+  </div>
+  <div class="scroll-cue"><span id="t9">தொடங்கு</span><span class="stem"></span></div>
+</section>
+
+<!-- ================= JOURNEY ================= -->
+<section class="journey">
+  <div class="journey-head">
+    <div id="t10" class="eyebrow">தொடக்கங்களும் அழகான பிணைப்புகளும்</div>
+    <h2 id="t11">உன்னையே தேர்ந்தெடுத்த ஏழு வருடங்கள்</h2>
+    <p id="t12">பகிர்ந்த சிரிப்பு, வளர்ச்சி, நிபந்தனையற்ற அன்பு நிறைந்த ஏழு வருடங்கள் வழியாக, உடையாத ஓர் அழகான பிணைப்பை நாம் நெய்தோம். இது நமது அழகான பிணைப்பின் பயணம்.</p>
+  </div>
+
+  <div class="year-tags-wrap">
+    <div class="year-tags">
+      <a id="t13" href="#year-1" class="year-tag active">வருடம் 1</a>
+      <a id="t14" href="#year-2" class="year-tag">வருடம் 2</a>
+      <a id="t15" href="#year-3" class="year-tag">வருடம் 3</a>
+      <a id="t16" href="#year-4" class="year-tag">வருடம் 4</a>
+      <a id="t17" href="#year-5" class="year-tag">வருடம் 5</a>
+      <a id="t18" href="#year-6" class="year-tag">வருடம் 6</a>
+      <a id="t19" href="#year-7" class="year-tag">வருடம் 7</a>
+    </div>
+  </div>
+
+  <div class="vine-wrap" id="vineWrap">
+    <svg class="vine-svg" id="vineSvg" preserveAspectRatio="none" viewBox="0 0 3 100">
+      <path class="vine-path" id="vinePath" d="M1.5,0 L1.5,100"></path>
+    </svg>
+
+    <div class="year-row" id="year-1"><div class="year-card"><span id="t20" class="yr-tag">8ஆம் வகுப்பு · 12&ndash;13</span><h3 id="t21">வருடம் ஒன்று</h3><div class="y7-photos"><div class="y7-carousel" data-autoplay="5000"><div class="y7-carousel-viewport"><div class="y7-carousel-track"><div class="y7-carousel-slide"><img src="https://drive.google.com/thumbnail?id=1YaBnnxgI7Sl6g7_Z4Ez2COf9EndocoC8&sz=w1000" alt="Year One" loading="lazy"><div class="y7-slide-cap"><span class="y7-cap-en">First glance</span><span class="y7-cap-ta">முதல் பார்வை</span></div></div><div class="y7-carousel-slide"><img src="https://drive.google.com/thumbnail?id=1jQ4m2P6rfj8Z_J-WstPKtqp38p3ImNnv&sz=w1000" alt="Year One" loading="lazy"><div class="y7-slide-cap"><span class="y7-cap-en">Just another day, or so I thought</span><span class="y7-cap-ta">வெறும் ஒரு நாள் என நினைத்தேன்</span></div></div><div class="y7-carousel-slide"><img src="https://drive.google.com/thumbnail?id=1MY3lbKWnhSyMI8S3y7CpZngPiqsHbwPU&sz=w1000" alt="Year One" loading="lazy"><div class="y7-slide-cap"><span class="y7-cap-en">You, always in the corner of my eye</span><span class="y7-cap-ta">நீ, எப்போதும் என் கண்ணோரத்தில்</span></div></div><div class="y7-carousel-slide"><img src="https://drive.google.com/thumbnail?id=1LCPxKp19uQ6VPxRfCOMC3WDjZUJqo4ID&sz=w1000" alt="Year One" loading="lazy"><div class="y7-slide-cap"><span class="y7-cap-en">The noise of school, the silence between us</span><span class="y7-cap-ta">பள்ளியின் சத்தம், நமக்கிடையே அமைதி</span></div></div><div class="y7-carousel-slide"><img src="https://drive.google.com/thumbnail?id=16FH4X9lZna-pfhzsck4YvyC1kEzRX6ZG&sz=w1000" alt="Year One" loading="lazy"><div class="y7-slide-cap"><span class="y7-cap-en">Uniform days, unspoken feelings</span><span class="y7-cap-ta">சீருடை நாட்கள், சொல்லாத உணர்வுகள்</span></div></div><div class="y7-carousel-slide"><img src="https://drive.google.com/thumbnail?id=1W7w3FrowB6wb1AZSrMgJzFb8H2rEpRjA&sz=w1000" alt="Year One" loading="lazy"><div class="y7-slide-cap"><span class="y7-cap-en">A smile I couldn't explain</span><span class="y7-cap-ta">விளக்க முடியாத ஒரு புன்னகை</span></div></div><div class="y7-carousel-slide"><img src="https://drive.google.com/thumbnail?id=1v0Tyk85X4e2trFvUUx99cl1KJR86vQHc&sz=w1000" alt="Year One" loading="lazy"><div class="y7-slide-cap"><span class="y7-cap-en">Recess minutes felt like hours</span><span class="y7-cap-ta">இடைவேளை நிமிடங்கள் மணிநேரமாக தோன்றியது</span></div></div><div class="y7-carousel-slide"><img src="https://drive.google.com/thumbnail?id=16F5eCEw4MORnBoWcVNJ5rXqvCVlpRaXr&sz=w1000" alt="Year One" loading="lazy"><div class="y7-slide-cap"><span class="y7-cap-en">Not friends yet, not strangers either</span><span class="y7-cap-ta">நண்பர்களும் இல்லை, அந்நியர்களும் இல்லை</span></div></div><div class="y7-carousel-slide"><img src="https://drive.google.com/thumbnail?id=1ofn2-2s3X2V3pnqLAVoHZOmS9S_HGwo_&sz=w1000" alt="Year One" loading="lazy"><div class="y7-slide-cap"><span class="y7-cap-en">Watching you from three desks away</span><span class="y7-cap-ta">மூன்று மேசை தள்ளி உன்னை பார்த்தேன்</span></div></div><div class="y7-carousel-slide"><img src="https://drive.google.com/thumbnail?id=1XbPeOQxxpr_nOyvCKvhSun0KBpfwel3r&sz=w1000" alt="Year One" loading="lazy"><div class="y7-slide-cap"><span class="y7-cap-en">The year everything quietly began</span><span class="y7-cap-ta">அனைத்தும் அமைதியாக தொடங்கிய வருடம்</span></div></div><div class="y7-carousel-slide"><img src="https://drive.google.com/thumbnail?id=19fKMusb-olWZQae4EBSgizJNy-XpH1cB&sz=w1000" alt="Year One" loading="lazy"><div class="y7-slide-cap"><span class="y7-cap-en">Homework forgotten, thoughts of you remained</span><span class="y7-cap-ta">வீட்டுபாடம் மறந்தது, உன் நினைவு மட்டும் மிச்சம்</span></div></div><div class="y7-carousel-slide"><img src="https://drive.google.com/thumbnail?id=1QXjIRInJ2N-MC3SylAMR8HcEUlloEFM0&sz=w1000" alt="Year One" loading="lazy"><div class="y7-slide-cap"><span class="y7-cap-en">A classroom full, but I only saw one face</span><span class="y7-cap-ta">நிறைந்த வகுப்பறை, ஆனால் ஒரே முகம் மட்டும் தெரிந்தது</span></div></div><div class="y7-carousel-slide"><img src="https://drive.google.com/thumbnail?id=1HCgGetUS-o-Q3kzVBfZ2vxvYqSLGU5R3&sz=w1000" alt="Year One" loading="lazy"><div class="y7-slide-cap"><span class="y7-cap-en">Twelve years old, falling anyway</span><span class="y7-cap-ta">பன்னிரண்டு வயது, அப்படியே காதலில் விழுந்தேன்</span></div></div><div class="y7-carousel-slide"><img src="https://drive.google.com/thumbnail?id=1BxUHVewuTWER9SKLeFglZjyke4AUIBSK&sz=w1000" alt="Year One" loading="lazy"><div class="y7-slide-cap"><span class="y7-cap-en">Chalk dust and quiet daydreams</span><span class="y7-cap-ta">சுண்ணாம்பு தூசியும் அமைதியான கனவுகளும்</span></div></div><div class="y7-carousel-slide"><img src="https://drive.google.com/thumbnail?id=1xvLZK6Sgzsrtt-LV5SkqG96oFtBE4aig&sz=w1000" alt="Year One" loading="lazy"><div class="y7-slide-cap"><span class="y7-cap-en">Every hallway led back to you</span><span class="y7-cap-ta">ஒவ்வொரு வழித்தடமும் உன்னிடமே கொண்டு சென்றது</span></div></div><div class="y7-carousel-slide"><img src="https://drive.google.com/thumbnail?id=129-OOZcnHk9x0U22qzaatPrEIMnQ4TmJ&sz=w1000" alt="Year One" loading="lazy"><div class="y7-slide-cap"><span class="y7-cap-en">Before I knew your name, I knew your laugh</span><span class="y7-cap-ta">உன் பெயர் தெரியும் முன், உன் சிரிப்பு தெரிந்திருந்தது</span></div></div><div class="y7-carousel-slide"><img src="https://drive.google.com/thumbnail?id=1xmMpSoTwaFh2rzDCTvJOv_yEVmidQD57&sz=w1000" alt="Year One" loading="lazy"><div class="y7-slide-cap"><span class="y7-cap-en">The bell rang, I wasn't ready to look away</span><span class="y7-cap-ta">மணி அடித்தது, பார்வையை திருப்ப மனமில்லை</span></div></div><div class="y7-carousel-slide"><img src="https://drive.google.com/thumbnail?id=1ZJica_1lA0jC2Hb_Duu0B4bVOF9w9uZS&sz=w1000" alt="Year One" loading="lazy"><div class="y7-slide-cap"><span class="y7-cap-en">This is where it all quietly started</span><span class="y7-cap-ta">இதுவே எல்லாம் அமைதியாக தொடங்கிய இடம்</span></div></div></div></div><div class="y7-carousel-dots"><span class="y7-carousel-dot active"></span><span class="y7-carousel-dot"></span><span class="y7-carousel-dot"></span><span class="y7-carousel-dot"></span><span class="y7-carousel-dot"></span><span class="y7-carousel-dot"></span><span class="y7-carousel-dot"></span><span class="y7-carousel-dot"></span><span class="y7-carousel-dot"></span><span class="y7-carousel-dot"></span><span class="y7-carousel-dot"></span><span class="y7-carousel-dot"></span><span class="y7-carousel-dot"></span><span class="y7-carousel-dot"></span><span class="y7-carousel-dot"></span><span class="y7-carousel-dot"></span><span class="y7-carousel-dot"></span><span class="y7-carousel-dot"></span></div></div><!-- Add more photos for "Year One" by copying a <div class="y7-carousel-slide">...</div> block above and pasting it here with a new link, and add a matching <span class="y7-carousel-dot"></span> in the dots row. --></div><p id="t22">2019&ndash;2020. அப்போது தெரியாத இரண்டு 8ஆம் வகுப்பு பிள்ளைகள் &mdash; ஆனால் பள்ளி நாட்களின் சத்தத்திற்குள் எங்கோ, அமைதியாக காதல் தொடங்கியது.</p><span id="t23" class="yr-quote">"அதற்கு பெயர் இடும் முன்பே, அது எனக்குள் ஒரு வீட்டைக் கண்டுவிட்டது."</span><button type="button" class="yr-more-btn" onclick="toggleReadMore(this)" aria-expanded="false"><span id="t113">Read More</span><span id="t114" hidden>Read Less</span></button><div class="yr-more-content"><span id="t112" class="yr-quote">"அவளுக்கே தெரியாமல் அவளை ரசித்த நாட்கள் அதிகம்...👀😶‍🌫️ மற்றும் நான் உன்னைப் பார்ப்பதற்கு முன் நீ என்னைப் பார்த்து நான் மயங்கிய தருணம்🫠💘"</span></div></div><div class="year-node">1</div><div class="spacer"></div></div>
+
+    <div class="year-row" id="year-2"><div class="spacer"></div><div class="year-node">2</div><div class="year-card"><span id="t24" class="yr-tag">9ஆம் வகுப்பு · 13&ndash;14</span><h3 id="t25">வருடம் இரண்டு</h3><div class="y7-photos"><div class="y7-carousel" data-autoplay="5000"><div class="y7-carousel-viewport"><div class="y7-carousel-track"><div class="y7-carousel-slide"><img src="https://drive.google.com/thumbnail?id=11cJ7SDnP_05UB0bT35q0xDCMQxI-PjQC&sz=w1000" alt="Year Two" loading="lazy"><div class="y7-slide-cap"><span class="y7-cap-en">The world went quiet, but my thoughts of you didn't</span><span class="y7-cap-ta">உலகம் அமைதியானது, ஆனால் உன் நினைவுகள் அமைதியாகவில்லை</span></div></div><div class="y7-carousel-slide"><img src="https://drive.google.com/thumbnail?id=1NUJ9pqGdTW3nzLEU7_Nq9ZUweom4Vthl&sz=w1000" alt="Year Two" loading="lazy"><div class="y7-slide-cap"><span class="y7-cap-en">Two months of class, a thousand days of missing you</span><span class="y7-cap-ta">இரண்டு மாத வகுப்பு, ஆயிரம் நாட்கள் உன் நினைவு</span></div></div><div class="y7-carousel-slide"><img src="https://drive.google.com/thumbnail?id=1DVp01X6e1qbJd3RkIqYtMW7_kbYrj4zQ&sz=w1000" alt="Year Two" loading="lazy"><div class="y7-slide-cap"><span class="y7-cap-en">Locked inside, but never locked away from you</span><span class="y7-cap-ta">வீட்டுக்குள் அடைபட்டேன், ஆனால் உன்னிடமிருந்து அல்ல</span></div></div></div></div><div class="y7-carousel-dots"><span class="y7-carousel-dot active"></span><span class="y7-carousel-dot"></span><span class="y7-carousel-dot"></span></div></div><!-- Add more photos for "Year Two" by copying a <div class="y7-carousel-slide">...</div> block above and pasting it here with a new link, and add a matching <span class="y7-carousel-dot"></span> in the dots row. --></div><p id="t26">2020&ndash;2021. உலகமே மூடப்பட்டது. வெறும் இரண்டு மாதங்கள் மட்டுமே உண்மையான படிப்பு, இன்னும் ஆயிரம் நாட்கள் தொலைவிலிருந்து உன்னைப் பற்றி நினைத்தவை.</p><span id="t27" class="yr-quote">"ஒரு ஊரடங்கு கூட என் உணர்வுகளை அடக்க முடியவில்லை."</span></div></div>
+
+    <div class="year-row" id="year-3"><div class="year-card"><span id="t28" class="yr-tag">10ஆம் வகுப்பு · 14&ndash;15</span><h3 id="t29">வருடம் மூன்று</h3><div class="y7-photos"><div class="y7-carousel" data-autoplay="5000"><div class="y7-carousel-viewport"><div class="y7-carousel-track"><div class="y7-carousel-slide"><img src="https://drive.google.com/thumbnail?id=1WxPXFhA01D9cTO3nvY_N8Vki8o0I6kez&sz=w1000" alt="Year Three" loading="lazy"><div class="y7-slide-cap"><span class="y7-cap-en">Tenth standard, and my heart wouldn't stay quiet</span><span class="y7-cap-ta">பத்தாம் வகுப்பு, அமைதியாக இருக்க மறுத்த இதயம்</span></div></div><div class="y7-carousel-slide"><img src="https://drive.google.com/thumbnail?id=1AsDzhnmKvWq2oile4y3EfYliQOVaqnHw&sz=w1000" alt="Year Three" loading="lazy"><div class="y7-slide-cap"><span class="y7-cap-en">Notes passed, feelings never spoken</span><span class="y7-cap-ta">குறிப்புகள் அனுப்பினேன், உணர்வுகள் சொல்லவில்லை</span></div></div><div class="y7-carousel-slide"><img src="https://drive.google.com/thumbnail?id=1dtyYChjl-PfaHUpyFeGKdBtmjj1RYuAP&sz=w1000" alt="Year Three" loading="lazy"><div class="y7-slide-cap"><span class="y7-cap-en">Every corridor felt shorter when you were near</span><span class="y7-cap-ta">நீ அருகில் இருந்தால் ஒவ்வொரு வழியும் குறுகியதாய் தோன்றியது</span></div></div><div class="y7-carousel-slide"><img src="https://drive.google.com/thumbnail?id=1LT0aL6hcDgNr40MV-_a7_QscJknZYWH9&sz=w1000" alt="Year Three" loading="lazy"><div class="y7-slide-cap"><span class="y7-cap-en">Exams came and went, you stayed on my mind</span><span class="y7-cap-ta">தேர்வுகள் வந்து போயின, நீ மட்டும் என் மனதில் நின்றாய்</span></div></div><div class="y7-carousel-slide"><img src="https://drive.google.com/thumbnail?id=1L-MmkCONkyZAyi5N61aqtDHrkDFIRjPj&sz=w1000" alt="Year Three" loading="lazy"><div class="y7-slide-cap"><span class="y7-cap-en">Practicing the words I was too scared to say</span><span class="y7-cap-ta">சொல்ல பயந்த வார்த்தைகளை பயிற்சி செய்தேன்</span></div></div><div class="y7-carousel-slide"><img src="https://drive.google.com/thumbnail?id=1h_tSnWMCngxdqXrnzXdqTA56H1LFAmEJ&sz=w1000" alt="Year Three" loading="lazy"><div class="y7-slide-cap"><span class="y7-cap-en">Ten minutes of courage, gathered over months</span><span class="y7-cap-ta">மாதங்களாக சேகரித்த பத்து நிமிட தைரியம்</span></div></div><div class="y7-carousel-slide"><img src="https://drive.google.com/thumbnail?id=1FpIC3db-roxDi6qrbSuLxazHAz_YnjiQ&sz=w1000" alt="Year Three" loading="lazy"><div class="y7-slide-cap"><span class="y7-cap-en">You laughed, and I forgot what I was saying</span><span class="y7-cap-ta">நீ சிரித்தாய், நான் என்ன சொல்ல வந்தேன் என்பதே மறந்தேன்</span></div></div><div class="y7-carousel-slide"><img src="https://drive.google.com/thumbnail?id=1EhjV0li0ea2DUScXE4SoFYXPqyJwBBg5&sz=w1000" alt="Year Three" loading="lazy"><div class="y7-slide-cap"><span class="y7-cap-en">The countdown to the end of tenth had begun</span><span class="y7-cap-ta">பத்தாம் வகுப்பு முடிவதற்கான கவுண்ட்டவுன் தொடங்கியது</span></div></div><div class="y7-carousel-slide"><img src="https://drive.google.com/thumbnail?id=1VMTIMJqDwUOCjVyRS0aoZLQZYg_L-aTK&sz=w1000" alt="Year Three" loading="lazy"><div class="y7-slide-cap"><span class="y7-cap-en">I rehearsed a hundred ways to tell you</span><span class="y7-cap-ta">உன்னிடம் சொல்ல நூறு வழிகளை மனதில் ஒத்திகை பார்த்தேன்</span></div></div><div class="y7-carousel-slide"><img src="https://drive.google.com/thumbnail?id=1UgGIR4AUKYwBq4YXmr6wOfacwIkyPvAV&sz=w1000" alt="Year Three" loading="lazy"><div class="y7-slide-cap"><span class="y7-cap-en">Time was running out, and so was my patience</span><span class="y7-cap-ta">நேரம் தீர்ந்து கொண்டிருந்தது, என் பொறுமையும்</span></div></div><div class="y7-carousel-slide"><img src="https://drive.google.com/thumbnail?id=1NCeLSQkdNg5JGgd6ttLYuTKbGgO6vTGP&sz=w1000" alt="Year Three" loading="lazy"><div class="y7-slide-cap"><span class="y7-cap-en">Somewhere between algebra and you, I lost focus</span><span class="y7-cap-ta">கணிதத்திற்கும் உனக்கும் இடையே, என் கவனம் தொலைந்தது</span></div></div><div class="y7-carousel-slide"><img src="https://drive.google.com/thumbnail?id=1fezRsduS5JNYdt34RMDDmqalDGPWDUUr&sz=w1000" alt="Year Three" loading="lazy"><div class="y7-slide-cap"><span class="y7-cap-en">A friend group of two, hiding something bigger</span><span class="y7-cap-ta">பெரிய ஒன்றை மறைத்த இரண்டு பேர் கொண்ட நட்பு</span></div></div><div class="y7-carousel-slide"><img src="https://drive.google.com/thumbnail?id=1z2rwnxghQ924RagCWrcNbwEWpUt7r62l&sz=w1000" alt="Year Three" loading="lazy"><div class="y7-slide-cap"><span class="y7-cap-en">The last few months felt like borrowed time</span><span class="y7-cap-ta">கடைசி சில மாதங்கள் கடன் வாங்கிய நேரம் போல் இருந்தது</span></div></div><div class="y7-carousel-slide"><img src="https://drive.google.com/thumbnail?id=1OUvZ6NJMvMcsLV1lcW2XRjX6gzfod2Np&sz=w1000" alt="Year Three" loading="lazy"><div class="y7-slide-cap"><span class="y7-cap-en">I finally said it, voice shaking, heart louder</span><span class="y7-cap-ta">இறுதியாக சொன்னேன், குரல் நடுங்கியது, இதயம் இன்னும் சத்தமாக இருந்தது</span></div></div><div class="y7-carousel-slide"><img src="https://drive.google.com/thumbnail?id=1aAuIE86SohFetEljxoTXhn-fT2eCSbQi&sz=w1000" alt="Year Three" loading="lazy"><div class="y7-slide-cap"><span class="y7-cap-en">Before I could finish, tenth standard finished first</span><span class="y7-cap-ta">நான் முடிப்பதற்குள், பத்தாம் வகுப்பே முடிந்துவிட்டது</span></div></div><div class="y7-carousel-slide"><img src="https://drive.google.com/thumbnail?id=1SjTDAcOhRBVMWSKqI6s45EOud_q7HCn2&sz=w1000" alt="Year Three" loading="lazy"><div class="y7-slide-cap"><span class="y7-cap-en">Some feelings don't wait for the right time</span><span class="y7-cap-ta">சில உணர்வுகள் சரியான நேரத்திற்காக காத்திருப்பதில்லை</span></div></div><div class="y7-carousel-slide"><img src="https://drive.google.com/thumbnail?id=1YcLansgqLsLytmFq-PUKSxR3EctkLeIB&sz=w1000" alt="Year Three" loading="lazy"><div class="y7-slide-cap"><span class="y7-cap-en">I ran out of time, but not out of you</span><span class="y7-cap-ta">நேரம் தீர்ந்தது, ஆனால் நீ தீரவில்லை</span></div></div><div class="y7-carousel-slide"><img src="https://drive.google.com/thumbnail?id=1PB4eqlJPFHVp1oAM1Z1_cMAINlSWaYJM&sz=w1000" alt="Year Three" loading="lazy"><div class="y7-slide-cap"><span class="y7-cap-en">The year I found my voice, even if too late</span><span class="y7-cap-ta">தாமதமாக இருந்தாலும், என் குரலை கண்டுபிடித்த வருடம்</span></div></div></div></div><div class="y7-carousel-dots"><span class="y7-carousel-dot active"></span><span class="y7-carousel-dot"></span><span class="y7-carousel-dot"></span><span class="y7-carousel-dot"></span><span class="y7-carousel-dot"></span><span class="y7-carousel-dot"></span><span class="y7-carousel-dot"></span><span class="y7-carousel-dot"></span><span class="y7-carousel-dot"></span><span class="y7-carousel-dot"></span><span class="y7-carousel-dot"></span><span class="y7-carousel-dot"></span><span class="y7-carousel-dot"></span><span class="y7-carousel-dot"></span><span class="y7-carousel-dot"></span><span class="y7-carousel-dot"></span><span class="y7-carousel-dot"></span><span class="y7-carousel-dot"></span></div></div><!-- Add more photos for "Year Three" by copying a <div class="y7-carousel-slide">...</div> block above and pasting it here with a new link, and add a matching <span class="y7-carousel-dot"></span> in the dots row. --></div><p id="t30">2021&ndash;2022. 10ஆம் வகுப்பு முடிவதற்குள், வெறும் மூன்று நான்கு மாதங்கள் மட்டும் மீதியிருக்கும்போது, முதன்முறையாக நான் அதை உரக்கச் சொன்னேன்.</p><span id="t31" class="yr-quote">"என் தைரியம் தீருமுன்பே, என் நேரம் தீர்ந்தது."</span></div><div class="year-node">3</div><div class="spacer"></div></div>
+
+    <div class="year-row" id="year-4"><div class="spacer"></div><div class="year-node">4</div><div class="year-card"><span id="t32" class="yr-tag">11ஆம் வகுப்பு · 15&ndash;16</span><h3 id="t33">வருடம் நான்கு</h3><div class="y7-photos"><div class="y7-photo" onclick="event.stopPropagation(); openLightbox(this.querySelector('img').src)" role="button" tabindex="0" aria-label="View photo full screen"><img src="https://drive.google.com/file/d/1OtA5bevjOAPL23LueXg9TzC7q_fvMxao/view?usp=drivesdk" alt="Year Four" loading="lazy"></div><!-- Add more photos for "Year Four" by copying the block above and pasting it here with a new link, e.g.:
+<div class="y7-photo" onclick="event.stopPropagation(); openLightbox(this.querySelector('img').src)" role="button" tabindex="0" aria-label="View photo full screen"><img src="PASTE_ANOTHER_DRIVE_LINK_HERE" alt="Year Four" loading="lazy"></div>
+--></div><p id="t34">2022&ndash;2023. நாங்கள் தொலைபேசியில் பேச ஆரம்பித்தோம் &mdash; உன் எண் என் ஃபோனில் என்றென்றைக்கும் சேமிக்கப்பட்டது: 8946012631.</p><span id="t35" class="yr-quote">"ஓர் எண்ணே என் இன்பாக்ஸ் முழுவதுமானது."</span></div></div>
+
+    <div class="year-row" id="year-5"><div class="year-card"><span id="t36" class="yr-tag">12ஆம் வகுப்பு · 16&ndash;17</span><h3 id="t37">வருடம் ஐந்து</h3><div class="y7-photos"><div class="y7-photo" onclick="event.stopPropagation(); openLightbox(this.querySelector('img').src)" role="button" tabindex="0" aria-label="View photo full screen"><img src="https://drive.google.com/file/d/1g1o8JtYUNTxo4oY7Q2z2SNVayDbLqFBS/view?usp=drivesdk" alt="Year Five" loading="lazy"></div><!-- Add more photos for "Year Five" by copying the block above and pasting it here with a new link, e.g.:
+<div class="y7-photo" onclick="event.stopPropagation(); openLightbox(this.querySelector('img').src)" role="button" tabindex="0" aria-label="View photo full screen"><img src="PASTE_ANOTHER_DRIVE_LINK_HERE" alt="Year Five" loading="lazy"></div>
+--></div><p id="t38">2023&ndash;2024. எந்த தொடர்பும் இல்லை. நீ நர்சிங் படிப்பில் மூழ்கியிருந்தாய், சிறிது காலத்திற்கு நாம் ஒருவரையொருவர் தொலைத்துவிட்டோம்.</p><span id="t39" class="yr-quote">"தொலைவு என்றுமே நான் மறந்துவிட்டேன் என்று அர்த்தமல்ல."</span></div><div class="year-node">5</div><div class="spacer"></div></div>
+
+    <div class="year-row" id="year-6"><div class="spacer"></div><div class="year-node">6</div><div class="year-card"><span id="t40" class="yr-tag">கல்லூரி வருடம் 1 · 17&ndash;18</span><h3 id="t41">வருடம் ஆறு</h3><div class="y7-photos"><div class="y7-photo" onclick="event.stopPropagation(); openLightbox(this.querySelector('img').src)" role="button" tabindex="0" aria-label="View photo full screen"><img src="https://drive.google.com/file/d/1sxYSENbPSHjSi3DTmEP3xIuJsF-u_REy/view?usp=drivesdk" alt="Year Six" loading="lazy"></div><!-- Add more photos for "Year Six" by copying the block above and pasting it here with a new link, e.g.:
+<div class="y7-photo" onclick="event.stopPropagation(); openLightbox(this.querySelector('img').src)" role="button" tabindex="0" aria-label="View photo full screen"><img src="PASTE_ANOTHER_DRIVE_LINK_HERE" alt="Year Six" loading="lazy"></div>
+--></div><p id="t42">2024&ndash;2025. முதல் வருடம் முடிந்தவுடன், இன்ஸ்டாகிராமில் உன்னை மீண்டும் கண்டுபிடித்தேன் (21 ஜூலை 2025). பிறகு உன் வாட்ஸ்அப் &mdash; 9080453116. ஆறு நாட்களுக்குப் பிறகு, 27 ஜூலை 2025 அன்று, மீண்டும் சொன்னேன். இந்த முறை, அது நிலைத்தது.</p><span id="t43" class="yr-quote">"இரண்டாம் வாய்ப்புகள் இரண்டு முறை தட்டாது &mdash; முதல் தட்டலுக்கே பதில் அளித்ததில் மகிழ்ச்சி."</span></div></div>
+
+    <div class="year-row" id="year-7"><div class="year-card"><span id="t44" class="yr-tag">கல்லூரி வருடம் 2 · 18&ndash;19</span><h3 id="t45">வருடம் ஏழு</h3><div class="y7-photos"><div class="y7-photo" onclick="event.stopPropagation(); openLightbox(this.querySelector('img').src)" role="button" tabindex="0" aria-label="View photo full screen"><img src="https://drive.google.com/file/d/1NYMGl-2lNOBxUgUdlDPi5ZTBKWtknZx9/view?usp=drivesdk" alt="Year Seven" loading="lazy"></div><!-- Add more photos for "Year Seven" by copying the block above and pasting it here with a new link, e.g.:
+<div class="y7-photo" onclick="event.stopPropagation(); openLightbox(this.querySelector('img').src)" role="button" tabindex="0" aria-label="View photo full screen"><img src="PASTE_ANOTHER_DRIVE_LINK_HERE" alt="Year Seven" loading="lazy"></div>
+--></div><p id="t46">2025&ndash;2026. நமது முதல் அணைப்பு &#129508; (வெள்ளி, 02 ஜன 2026, 12:24 pm). நமது முதல் முத்தம் &#128536; (திங்கள், 05 ஜன 2026, 12:10 pm). கீழே உள்ள புகைப்படங்களில், நமது ஒரு முழு வருடம்.</p><span id="t47" class="yr-quote">"உன்னுடன் ஒவ்வொரு 'முதல்' தருணமும் வீடு திரும்பியது போல் இருந்தது."</span></div><div class="year-node">7</div><div class="spacer"></div></div>
+  </div>
+</section>
+
+
+<!-- ================= PHOTO STORY (YEAR SEVEN, SWIPEABLE) ================= -->
+<section>
+  <div class="photo-story">
+    <div class="photo-story-head">
+      <div id="t48" class="eyebrow">27 ஜூலை 2025 &mdash; 27 ஜூலை 2026</div>
+      <h2 id="t49">வருடம் ஏழு, புகைப்படங்களில்</h2>
+      <p id="t50">ஒவ்வொரு சாதாரண செவ்வாயும், ஒவ்வொரு சினிமா இரவும், ஒவ்வொரு அமைதியான செல்ஃபியும் &mdash; நம்மை இங்கே கொண்டு வந்த வருடம்.</p>
+    </div>
+    <div class="swipe-hint">ஒரு புகைப்படத்தைத் திறக்க தொடவும், அனைத்தையும் பார்க்க ஸ்வைப் செய்யவும்
+      <svg width="20" height="14" viewBox="0 0 20 14" fill="none"><path d="M1 7H19M19 7L13 1M19 7L13 13" stroke="#C97B84" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <div class="strip" id="photoStrip">
+      <div class="polaroid" style="--r:-2deg" onclick="openLightbox(this.querySelector('img').src)" role="button" tabindex="0" aria-label="View photo full screen"><img src="https://drive.google.com/thumbnail?id=1NYMGl-2lNOBxUgUdlDPi5ZTBKWtknZx9&sz=w1000" alt="Year Seven" loading="lazy"></div><div class="polaroid" style="--r:-3deg" onclick="openLightbox(this.querySelector('img').src)" role="button" tabindex="0" aria-label="View photo full screen"><img src="https://drive.google.com/file/d/1CtMgmoF-Aj_kvAKwEZljrXZOTLqdBzUy/view?usp=drivesdk" alt="Movie night snacks in the dark" loading="lazy"><div class="p-cap"><span class="p-date">27 Dec 2025</span><span id="t98" class="p-text">இருட்டில் சினிமா இரவு தின்பண்டங்கள்</span></div></div><div class="polaroid" style="--r:2deg" onclick="openLightbox(this.querySelector('img').src)" role="button" tabindex="0" aria-label="View photo full screen"><img src="https://drive.google.com/file/d/136cEjOtEyKnAPq2f-B8HGlHwq2DbWhUi/view?usp=drivesdk" alt="Avatar: Fire and Ash · Krishnalaya" loading="lazy"><div class="p-cap"><span class="p-date">27 Dec 2025</span><span id="t99" class="p-text">அவதார்: ஃபயர் அண்ட் ஆஷ் · கிருஷ்ணாலயா</span></div></div><div class="polaroid" style="--r:-2deg" onclick="openLightbox(this.querySelector('img').src)" role="button" tabindex="0" aria-label="View photo full screen"><img src="https://drive.google.com/file/d/1DU7tw-K_YTn_VfALDZ3ICkGmDRMjLgbw/view?usp=drivesdk" alt="Popcorn, glasses, ticket stub" loading="lazy"><div class="p-cap"><span class="p-date">27 Dec 2025</span><span id="t100" class="p-text">பாப்கார்ன், கண்ணாடிகள், டிக்கெட் துண்டு</span></div></div><div class="polaroid" style="--r:3deg" onclick="openLightbox(this.querySelector('img').src)" role="button" tabindex="0" aria-label="View photo full screen"><img src="https://drive.google.com/file/d/1q-NkO-sbSGjWe9s9CUFR7nYkazclm_y3/view?usp=drivesdk" alt="9:07 am" loading="lazy"><div class="p-cap"><span class="p-date">17 Feb 2026</span><span class="p-text">9:07 am</span></div></div><div class="polaroid" style="--r:-4deg" onclick="openLightbox(this.querySelector('img').src)" role="button" tabindex="0" aria-label="View photo full screen"><img src="https://drive.google.com/file/d/1yFVdIM7iJXPMJ0IX3NKsS6fLC8PZxeMy/view?usp=drivesdk" alt="Close and quiet" loading="lazy"><div class="p-cap"><span class="p-date">17 Feb 2026</span><span id="t101" class="p-text">நெருக்கமாகவும் அமைதியாகவும்</span></div></div><div class="polaroid" style="--r:1deg" onclick="openLightbox(this.querySelector('img').src)" role="button" tabindex="0" aria-label="View photo full screen"><img src="https://drive.google.com/file/d/1o7IiUj4moU1kSYgHp0p-FghtkJX6UCxL/view?usp=drivesdk" alt="10:01 am" loading="lazy"><div class="p-cap"><span class="p-date">14 Mar 2026</span><span class="p-text">10:01 am</span></div></div><div class="polaroid" style="--r:-1deg" onclick="openLightbox(this.querySelector('img').src)" role="button" tabindex="0" aria-label="View photo full screen"><img src="https://drive.google.com/file/d/1KTDEd3-Mx-4oISjBothtN2upQTKjk2Lh/view?usp=drivesdk" alt="10:07 am" loading="lazy"><div class="p-cap"><span class="p-date">14 Mar 2026</span><span class="p-text">10:07 am</span></div></div><div class="polaroid" style="--r:4deg" onclick="openLightbox(this.querySelector('img').src)" role="button" tabindex="0" aria-label="View photo full screen"><img src="https://drive.google.com/file/d/1191IsychSO4-bpt8-grDHoRsAUrQ9YoU/view?usp=drivesdk" alt="12:07 pm · the movies" loading="lazy"><div class="p-cap"><span id="t96" class="p-date">செவ்வாய்</span><span id="t102" class="p-text">12:07 pm · திரையரங்கு</span></div></div><div class="polaroid" style="--r:-3deg" onclick="openLightbox(this.querySelector('img').src)" role="button" tabindex="0" aria-label="View photo full screen"><img src="https://drive.google.com/file/d/1YP51dtTotfL728GOJGkaZ1CWOCrntZoZ/view?usp=drivesdk" alt="Hands, mid-conversation" loading="lazy"><div class="p-cap"><span id="t103" class="p-text">கைகள், பேச்சுக்கிடையே</span></div></div><div class="polaroid" style="--r:2deg" onclick="openLightbox(this.querySelector('img').src)" role="button" tabindex="0" aria-label="View photo full screen"><img src="https://drive.google.com/file/d/1Jlw-wX4DZyGWqAyG_QwV8OUDcSTD8dft/view?usp=drivesdk" alt="10:51 am · holding on" loading="lazy"><div class="p-cap"><span id="t97" class="p-date">சனிக்கிழமை</span><span id="t104" class="p-text">10:51 am · கை பிடித்தபடி</span></div></div><div class="polaroid" style="--r:-2deg" onclick="openLightbox(this.querySelector('img').src)" role="button" tabindex="0" aria-label="View photo full screen"><img src="https://drive.google.com/file/d/1XQucMfoaOordiykmVYLuHRSbW15f1FMV/view?usp=drivesdk" alt="Two fingers up" loading="lazy"><div class="p-cap"><span id="t105" class="p-text">இரண்டு விரல்கள் மேலே</span></div></div><div class="polaroid" style="--r:3deg" onclick="openLightbox(this.querySelector('img').src)" role="button" tabindex="0" aria-label="View photo full screen"><img src="https://drive.google.com/file/d/1QkjwGmHArHsgDdxAs5gOUWmU2J4kQjrG/view?usp=drivesdk" alt="Under the roots" loading="lazy"><div class="p-cap"><span id="t106" class="p-text">வேர்களுக்கு அடியில்</span></div></div><div class="polaroid" style="--r:-4deg" onclick="openLightbox(this.querySelector('img').src)" role="button" tabindex="0" aria-label="View photo full screen"><img src="https://drive.google.com/file/d/1GhWnGBd5-0nPQLwIQ-lTSo_498RajnfV/view?usp=drivesdk" alt="Wandering, just us" loading="lazy"><div class="p-cap"><span id="t107" class="p-text">அலைந்து திரிதல், நாம் மட்டும்</span></div></div><div class="polaroid" style="--r:1deg" onclick="openLightbox(this.querySelector('img').src)" role="button" tabindex="0" aria-label="View photo full screen"><img src="https://drive.google.com/file/d/1jQmPYGjmnqHrwLChJFmSnOQRluiwT8rA/view?usp=drivesdk" alt="happiness." loading="lazy"><div class="p-cap"><span id="t108" class="p-text">மகிழ்ச்சி.</span></div></div><div class="polaroid" style="--r:-1deg" onclick="openLightbox(this.querySelector('img').src)" role="button" tabindex="0" aria-label="View photo full screen"><img src="https://drive.google.com/file/d/135HAwSReiHVz48wxB3rv_KTpcLN5x8Oi/view?usp=drivesdk" alt="12:09 pm" loading="lazy"><div class="p-cap"><span class="p-date">23 Jun 2026</span><span class="p-text">12:09 pm</span></div></div><div class="polaroid" style="--r:4deg" onclick="openLightbox(this.querySelector('img').src)" role="button" tabindex="0" aria-label="View photo full screen"><img src="https://drive.google.com/file/d/1MRRiM2Iq9h7bmwoGKgHUro_9C5X9MtFr/view?usp=drivesdk" alt="With Amma" loading="lazy"><div class="p-cap"><span id="t109" class="p-text">அம்மாவுடன்</span></div></div><div class="polaroid" style="--r:-3deg" onclick="openLightbox(this.querySelector('img').src)" role="button" tabindex="0" aria-label="View photo full screen"><img src="https://drive.google.com/file/d/1sNhjVRP23WArfmb-Lm_cSLoNhGIwZ2EJ/view?usp=drivesdk" alt="" loading="lazy"><div class="p-cap"><span class="p-date">23 Apr 2026</span><span class="p-text"></span></div></div><div class="polaroid" style="--r:2deg" onclick="openLightbox(this.querySelector('img').src)" role="button" tabindex="0" aria-label="View photo full screen"><img src="https://drive.google.com/file/d/1j9XiurJhb0qCt8xVSRYogjoAWeVoxk9U/view?usp=drivesdk" alt="12:15 pm" loading="lazy"><div class="p-cap"><span class="p-date">29 Jun 2026</span><span class="p-text">12:15 pm</span></div></div><div class="polaroid" style="--r:-2deg" onclick="openLightbox(this.querySelector('img').src)" role="button" tabindex="0" aria-label="View photo full screen"><img src="https://drive.google.com/file/d/1T_erWG6VQIFteBzGUaLm55hxrtLs1OLn/view?usp=drivesdk" alt="Us, unfiltered" loading="lazy"><div class="p-cap"><span id="t110" class="p-text">நாம், வடிகட்டப்படாமல்</span></div></div><div class="polaroid" style="--r:3deg" onclick="openLightbox(this.querySelector('img').src)" role="button" tabindex="0" aria-label="View photo full screen"><img src="https://drive.google.com/file/d/1bFfQmFusaq8jCAd1CUneEEVhSTvTQ_7e/view?usp=drivesdk" alt="Still holding hands — one year in" loading="lazy"><div class="p-cap"><span class="p-date">27 Jul 2026</span><span id="t111" class="p-text">இன்னும் கை பிடித்தபடி — ஒரு வருடம் ஆனது</span></div></div>
+    </div>
+    <div class="strip-progress"><div class="strip-progress-bar" id="stripBar"></div></div>
+  </div>
+</section>
+
+<!-- ================= VOW ================= -->
+<section class="vow">
+  <div class="vow-inner">
+    <span id="t51" class="script">பிறகு, இறுதியாக, நான் சொன்னேன்</span>
+    <h2 id="t52">"நான் உன்னை காதலிக்கிறேன்."</h2>
+    <p id="t53">27 ஜூலை 2025 &mdash; இன்று ஓராண்டு முன்பு, ஏழு அமைதியான வருடங்கள் இறுதியாக உரக்கப் பேசின</p>
+  </div>
+</section>
+
+<!-- ================= YEAR ONE BLOOM ================= -->
+<section>
+  <div class="bloom">
+    <svg class="bloom-mark" viewBox="0 0 64 64" fill="none">
+      <path d="M32 54C32 54 12 42 12 26C12 17 19 12 26 15C29 16.3 31 19 32 22C33 19 35 16.3 38 15C45 12 52 17 52 26C52 42 32 54 32 54Z" stroke="currentColor" stroke-width="1.5"/>
+    </svg>
+    <div id="t54" class="eyebrow">நான் சொன்ன ஒரு வருடம்</div>
+    <h2 id="t55">நான் உன்னை எல்லையின்றி காதலிக்கிறேன் &#9854;&#65039; தகம் &#128521;</h2>
+    <p id="t56" class="sub">அரிதான வருடம் &mdash; வார்த்தைகள் இன்னும் புத்தம் புதிதாக இருந்த வருடம்</p>
+
+    <div class="bloom-letter">
+      <p id="t57">முந்நூற்று அறுபத்தைந்து நாட்களுக்கு முன்பு, 27 ஜூலை 2025 அன்று, 8ஆம் வகுப்பிலிருந்து அமைதியாக சுமந்து வந்ததை நான் இறுதியாக உரக்கச் சொன்னேன். ஒரு வருடம் கழித்து, ஒரு நொடி கூட தயங்காமல் மீண்டும் சொல்வேன்.</p>
+      <p id="t58">சிறுவயதில் நமக்கு உறுதியளிக்கப்பட்ட கற்பனைக் கதை அல்ல காதல் என்று இந்த வருடம் எனக்குக் கற்பித்தது &mdash; இது இன்னும் சிறந்தது. இது உண்மையானது. இது ஒரு வெள்ளிக்கிழமை மதியம் நமது முதல் அணைப்பு, நான் ஒருபோதும் மறக்க முடியாத ஒரு திங்கள்கிழமை நமது முதல் முத்தம், சினிமாவில் சாதாரண செவ்வாய்க்கிழமைகள், கை பிடித்தபடி இருக்கும் சனிக்கிழமைகள்.</p>
+      <p id="t59">இதை தொடர்ந்து செய்ய முடியும் நமது வடிவத்திற்கு &mdash; வருடத்திற்கு வருடம், ஆண்டு விழாவிற்கு ஆண்டு விழா, நமக்குக் கிடைக்கும் வரை.</p>
+      <span id="t60" class="sign">என்றென்றும் உன்னுடையவன், விஷால்</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WISHES ================= -->
+<section>
+  <div class="wishes">
+    <div class="wishes-head">
+      <div id="t61" class="eyebrow">இருவருக்கும் வாழ்த்துகள்</div>
+      <h2 id="t62">நமக்காக நான் விரும்புவது</h2>
+    </div>
+    <div class="wish-grid">
+      <div class="wish-card"><span id="t63" class="n">ஏழு வருடங்கள் குறித்து</span><h3 id="t64">உறுதிப்பாடு</h3><p id="t65">முன்னால் வரும் வருடங்கள் பின்னால் இருந்தவை போலவே உறுதியாக இருக்கட்டும் &mdash; இரு மனிதர்கள் மீண்டும் மீண்டும் அதே நபரைத் தேர்ந்தெடுத்தபடி.</p></div>
+      <div class="wish-card"><span id="t66" class="n">அடுத்து வருவதைப் பற்றி</span><h3 id="t67">குடும்பமும் குழந்தைகளும்</h3><p id="t68">மகிழ்ச்சியான, ஆரோக்கியமான குடும்பம் என்ற விலைமதிப்பற்ற சேர்க்கையுடன் உங்கள் பிணைப்பு இன்னும் வலுவாக வளரட்டும். பெற்றோர் என்ற அழகான சவால்களை ஒன்றாகக் கடக்கும்போது, பல குழந்தைகளின் கலகலப்பு உங்கள் வீட்டை நிரப்பி, நிபந்தனையற்ற அன்பின் புதிய அடுக்குகளையும் விலைமதிப்பற்ற நினைவுகளையும் கொண்டு வரட்டும்.</p></div>
+      <div class="wish-card"><span id="t69" class="n">சமநிலையான வாழ்க்கை</span><h3 id="t70">சண்டையும் காதலும்</h3><p id="t71">பயணத்தை முழுவதுமாக அரவணைத்துக் கொள்ளுங்கள். தொடர்பாடல் உண்மையாகவும் நேர்மையாகவும் இருக்க போதுமான சிறு வாக்குவாதங்களும், ஒவ்வொரு நாளையும் சிறப்பாக உணர எல்லையற்ற காதலும் இருக்கட்டும். ஆர்வமும் அமைதியும் நிறைந்த வாழ்நாள் முழுவதற்குமான உறவை இந்த அழகான, உண்மையான சமநிலை உங்களைச் சுமந்து செல்லும்.</p></div>
+      <div class="wish-card"><span id="t72" class="n">முன்னால் இருப்பதைப் பற்றி</span><h3 id="t73">இன்னும் அதிகம்</h3><p id="t74">இன்னும் அதிக அமைதியான காலைகள், இன்னும் அதிக அக உணர்வுத் தமாஷுகள், இது போன்ற கடிதங்கள் எழுத தகுதியான இன்னும் அதிக வருடங்கள் &mdash; ஒன்றாக, எப்போதும் ஒன்றாக.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LOVE NOTES (surprise) ================= -->
+<section>
+  <div class="notes">
+    <div class="notes-head">
+      <div id="t75" class="eyebrow">உனக்கான ஒரு சிறிய ஆச்சரியம்</div>
+      <h2 id="t76">காதல் குறிப்புகள்</h2>
+    </div>
+    <div class="note-grid">
+      <div class="note-card"><p id="t77">பன்னிரண்டு வயதில் ஏற்கனவே உன்னுடையவனாக &mdash; சில இதயங்கள் சீக்கிரமே தெரிந்துகொள்கின்றன.</p><span id="t78">8ஆம் வகுப்பு, 2019</span></div>
+      <div class="note-card"><p id="t79">அந்த வருடம் ஒரு முழு உலகமே நின்றுவிட்டது. உன்மேல் என் உணர்வுகள் ஒருபோதும் நிற்கவில்லை.</p><span id="t80">9ஆம் வகுப்பு, 2020</span></div>
+      <div class="note-card"><p id="t81">மூன்று மாதங்கள் தைரியம், ஒரே ஒரு வாக்கியம், எல்லாமே மாறியது.</p><span id="t82">10ஆம் வகுப்பு, 2022</span></div>
+      <div class="note-card"><p id="t83">நீ இழக்கும் நபர் நீயே ஆக இருக்கும்போது அமைதி உரக்கக் கேட்கும்.</p><span id="t84">12ஆம் வகுப்பு, 2024</span></div>
+      <div class="note-card"><p id="t85">27.07.2025 &mdash; ஏழு வருடங்களின் அமைதி இறுதியாகப் பேசிய நாள்.</p><span id="t86">ஒப்புதல் நாள்</span></div>
+      <div class="note-card"><p id="t87">முதன்முறையாக என்னைச் சுற்றி உன் கைகள் &mdash; எனக்கு இருந்த ஒவ்வொரு பயமும் மறைந்தது.</p><span id="t88">முதல் அணைப்பு, 02 ஜன 2026</span></div>
+      <div class="note-card"><p id="t89">ஒரு திங்கள்கிழமை மதியம், 12:10 pm &mdash; கற்பனை செய்வதை நிறுத்திவிட்டு அதை வாழத் தொடங்கிய அந்த நிமிடம்.</p><span id="t90">முதல் முத்தம், 05 ஜன 2026</span></div>
+      <div class="note-card"><p id="t91">ஏழு வருடங்கள் அமைதியாக உன்னை காதலித்தேன். ஒரு வருடம் உரக்க காதலிக்கிறேன்.</p><span id="t92">இன்று, 27 ஜூலை 2026</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= --> ================= -->
+<footer>
+  <span id="t93" class="script">இனிய ஆண்டு விழா, என் அன்பே</span>
+  <p id="t94" class="names">விஷால் <span class="heart-inline">&#128420;</span> கயத்ரி &#9854;&#65039;</p>
+  <p id="t95">ஏழு வருட காதல் &middot; முதல் ஆண்டு விழா</p>
+</footer>
+
+</div><!-- /.site-content -->
+
+<script>
+  /* ---------- Google Drive photo links ----------
+     Paste your Google Drive "share" link straight into any
+     <img src="..."> below (make sure sharing is set to
+     "Anyone with the link"), e.g.
+     https://drive.google.com/file/d/FILE_ID/view?usp=sharing
+     This code automatically turns it into a working image link.
+     A normal (non-Drive) image URL still works as-is too. */
+  function extractDriveFileId(url){
+    let m = url.match(/\/d\/([a-zA-Z0-9_-]{10,})/);
+    if(m) return m[1];
+    m = url.match(/[?&]id=([a-zA-Z0-9_-]{10,})/);
+    if(m) return m[1];
+    return null;
+  }
+  function resolveImageUrl(url){
+    if(!url) return url;
+    if(/drive\.google\.com/i.test(url)){
+      const id = extractDriveFileId(url);
+      if(id) return `https://drive.google.com/thumbnail?id=${id}&sz=w1600`;
+    }
+    return url;
+  }
+  function fixDriveImages(){
+    document.querySelectorAll('.polaroid img, .y7-photo img').forEach(img => {
+      const current = img.getAttribute('src');
+      const resolved = resolveImageUrl(current);
+      if(resolved && resolved !== current) img.src = resolved;
+    });
+  }
+  fixDriveImages();
+
+  // Reveal timeline rows and wish cards on scroll
+  const revealTargets = document.querySelectorAll('.year-row, .wish-card');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if(e.isIntersecting){
+        e.target.classList.add('in-view');
+      }
+    });
+  }, { threshold: 0.3 });
+  revealTargets.forEach(t => io.observe(t));
+
+  // Draw the vine as the journey section scrolls into view
+  const vinePath = document.getElementById('vinePath');
+  const vineWrap = document.getElementById('vineWrap');
+  const vineIO = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if(e.isIntersecting){
+        vinePath.classList.add('drawn');
+        vineIO.disconnect();
+      }
+    });
+  }, { threshold: 0.05 });
+  vineIO.observe(vineWrap);
+
+  /* ---------------- Ambient falling flower petals ---------------- */
+  const petalField = document.getElementById('petalField');
+  const petalSVGs = [
+    // simple 5-petal blossom
+    `<svg width="22" height="22" viewBox="0 0 24 24"><g fill="#C97B84" opacity="0.85">
+      <ellipse cx="12" cy="6" rx="4" ry="6"/><ellipse cx="12" cy="18" rx="4" ry="6"/>
+      <ellipse cx="6" cy="12" rx="6" ry="4"/><ellipse cx="18" cy="12" rx="6" ry="4"/>
+    </g><circle cx="12" cy="12" r="2.6" fill="#D9BE8B"/></svg>`,
+    // single petal / rose petal shape
+    `<svg width="16" height="20" viewBox="0 0 16 20"><path d="M8 0C8 0 16 6 16 12C16 17 12 20 8 20C4 20 0 17 0 12C0 6 8 0 8 0Z" fill="#B8934A" opacity="0.75"/></svg>`,
+    // small blossom, gold
+    `<svg width="18" height="18" viewBox="0 0 24 24"><g fill="#F3DCD9" opacity="0.9">
+      <ellipse cx="12" cy="6" rx="3.4" ry="5.5"/><ellipse cx="12" cy="18" rx="3.4" ry="5.5"/>
+      <ellipse cx="6" cy="12" rx="5.5" ry="3.4"/><ellipse cx="18" cy="12" rx="5.5" ry="3.4"/>
+    </g><circle cx="12" cy="12" r="2.2" fill="#C97B84"/></svg>`
+  ];
+
+  function spawnPetals(count){
+    for(let i=0;i<count;i++){
+      const p = document.createElement('div');
+      p.className = 'petal';
+      p.innerHTML = petalSVGs[Math.floor(Math.random()*petalSVGs.length)];
+      const left = Math.random()*100;
+      const duration = 11 + Math.random()*10;
+      const delay = Math.random()*duration;
+      const drift = (Math.random()*140 - 70) + 'px';
+      const scale = 0.6 + Math.random()*0.9;
+      p.style.left = left + 'vw';
+      p.style.setProperty('--drift', drift);
+      p.style.animationDuration = duration + 's';
+      p.style.animationDelay = '-' + delay + 's';
+      p.style.transform = `scale(${scale})`;
+      petalField.appendChild(p);
+    }
+  }
+  spawnPetals(window.innerWidth < 640 ? 14 : 24);
+
+  /* ---------------- Gift-box tap-to-open intro ---------------- */
+  const giftGate = document.getElementById('giftGate');
+  const giftBox = document.getElementById('giftBox');
+  const burstWrap = document.getElementById('burstWrap');
+  const siteContent = document.getElementById('siteContent');
+  const htmlEl = document.documentElement;
+
+  const petalEmojis = ['🪻','🏵️','💐','🌹','🥀','🥀','🌺','🪷','🪷','🌸','💐','💮','🍂','🪻','🍂','🏵️','🍂','🪻','🪻','🍁'];
+
+  function makeBurst(){
+    const n = 16;
+    for(let i=0;i<n;i++){
+      const b = document.createElement('div');
+      b.className = 'burst-petal';
+      b.textContent = petalEmojis[Math.floor(Math.random()*petalEmojis.length)];
+      const angle = (Math.PI * 2 * i / n) + Math.random()*0.4;
+      const dist = 90 + Math.random()*90;
+      b.style.fontSize = (16 + Math.random()*10) + 'px';
+      b.style.setProperty('--bx', Math.cos(angle)*dist + 'px');
+      b.style.setProperty('--by', Math.sin(angle)*dist - 60 + 'px');
+      b.style.setProperty('--br', (Math.random()*360) + 'deg');
+      b.style.animationDelay = (Math.random()*0.15) + 's';
+      burstWrap.appendChild(b);
+    }
+  }
+
+  /* ---------------- Heart particle-formation scene ---------------- */
+  const heartGate = document.getElementById('heartGate');
+  const heartCanvas = document.getElementById('heartCanvas');
+  const heartTaglineEl = document.getElementById('heartTagline');
+  const heartCaption = document.getElementById('t116');
+  const heartSkip = document.getElementById('t115');
+  let heartDone = false;
+  let heartAnimId = null;
+
+  function drawHeartScene(onComplete){
+    const hctx = heartCanvas.getContext('2d');
+    const dpr = window.devicePixelRatio || 1;
+    let hW, hH;
+
+    function hResize(){
+      hW = heartGate.clientWidth;
+      hH = heartGate.clientHeight;
+      heartCanvas.width = hW * dpr;
+      heartCanvas.height = hH * dpr;
+      hctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+    hResize();
+
+    function hRand(a, b){ return Math.random() * (b - a) + a; }
+    function heartXf(t, s){ return s * 16 * Math.pow(Math.sin(t), 3) / 17; }
+    function heartYf(t, s){ return -s * (13 * Math.cos(t) - 5 * Math.cos(2 * t) - 2 * Math.cos(3 * t) - Math.cos(4 * t)) / 17; }
+
+    /* twinkling starfield backdrop */
+    let stars = [];
+    function buildHeartStars(){
+      stars = [];
+      for(let i = 0; i < 220; i++){
+        const z = hRand(0.3, 1.3);
+        stars.push({
+          x: hRand(0, hW), y: hRand(0, hH), z,
+          r: hRand(0.2, 1.5) * z, a: hRand(0.1, 0.8) * z,
+          pa: hRand(0, Math.PI * 2), ps: hRand(0.01, 0.03)
+        });
+      }
+    }
+    buildHeartStars();
+
+    /* particles that fly in from all directions and settle into a heart shape */
+    let particles = [];
+    let heartBoundsW = 0, heartBoundsH = 0, heartCenterOffsetY = -16;
+    function buildHeartParticles(){
+      const size = Math.min(hW, hH) * 0.3;
+      const hpts = [];
+      let minRX = Infinity, maxRX = -Infinity, minRY = Infinity, maxRY = -Infinity;
+      for(let i = 0; i < 520; i++){
+        const a = (i / 520) * Math.PI * 2;
+        const rx = heartXf(a, size), ry = heartYf(a, size) - 16;
+        hpts.push({ rx, ry });
+        if(rx < minRX) minRX = rx;
+        if(rx > maxRX) maxRX = rx;
+        if(ry < minRY) minRY = ry;
+        if(ry > maxRY) maxRY = ry;
+      }
+      heartBoundsW = maxRX - minRX;
+      heartBoundsH = maxRY - minRY;
+      heartCenterOffsetY = -16;
+      particles = hpts.map(p => {
+        const a = hRand(0, Math.PI * 2);
+        const dist = hRand(50, Math.max(hW, hH) * 0.8);
+        return {
+          x: hW / 2 + Math.cos(a) * dist,
+          y: hH / 2 + Math.sin(a) * dist,
+          rx: p.rx, ry: p.ry,
+          z: hRand(0.6, 1.5),
+          r: hRand(1.4, 3.2),
+          color: `hsl(${hRand(335, 375) % 360},${hRand(75, 95)}%,${hRand(58, 78)}%)`,
+          speed: hRand(0.014, 0.03),
+          progress: hRand(-0.5, 0),
+          trail: [], alpha: 0
+        };
+      });
+    }
+    buildHeartParticles();
+
+    let ecgPts = [], ecgX = 0, phase = 0, textAlpha = 0, allArrived = false, doneTimer = 0, completed = false;
+
+    function drawStarsF(){
+      stars.forEach(s => {
+        s.pa += s.ps;
+        const a = s.a * (0.5 + 0.5 * Math.sin(s.pa));
+        hctx.beginPath();
+        hctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+        hctx.fillStyle = `rgba(251,243,234,${a})`;
+        hctx.fill();
+      });
+    }
+
+    function drawECGf(){
+      ecgX += 3.2;
+      const cx = hW / 2, cy = hH / 2, w = hW * 0.7, startX = cx - w / 2;
+      const relX = ecgX - startX;
+      let y = cy;
+
+      if(relX > w * 0.3 && relX < w * 0.32) y = cy - 5;
+      else if(relX > w * 0.32 && relX < w * 0.34) y = cy + 8;
+      else if(relX > w * 0.34 && relX < w * 0.42){
+        const p = (relX - w * 0.34) / (w * 0.08);
+        if(p < 0.2) y = cy - hH * 0.22 * p / 0.2;
+        else if(p < 0.4) y = cy - hH * 0.22 + (hH * 0.22 + hH * 0.12) * (p - 0.2) / 0.2;
+        else if(p < 0.55) y = cy + hH * 0.12 - (hH * 0.12) * (p - 0.4) / 0.15;
+        else y = cy;
+      } else if(relX > w * 0.44 && relX < w * 0.46) y = cy - 8;
+      else if(relX > w * 0.46 && relX < w * 0.48) y = cy + 5;
+
+      ecgPts.push({ x: ecgX, y });
+      if(ecgPts.length > 200) ecgPts.shift();
+
+      hctx.beginPath();
+      hctx.strokeStyle = '#e58fa0';
+      hctx.lineWidth = 2.2;
+      hctx.shadowColor = '#e58fa0';
+      hctx.shadowBlur = 12;
+      ecgPts.forEach((p, i) => {
+        hctx.globalAlpha = i / ecgPts.length;
+        i === 0 ? hctx.moveTo(p.x, p.y) : hctx.lineTo(p.x, p.y);
+      });
+      hctx.stroke();
+      hctx.globalAlpha = 1;
+      hctx.shadowBlur = 0;
+
+      hctx.beginPath();
+      hctx.arc(ecgX, y, 4, 0, Math.PI * 2);
+      hctx.fillStyle = '#fff';
+      hctx.shadowColor = '#e58fa0';
+      hctx.shadowBlur = 15;
+      hctx.fill();
+      hctx.shadowBlur = 0;
+
+      if(relX > w * 0.34 && relX < w * 0.42){
+        hctx.beginPath();
+        hctx.arc(ecgX, y, 12, 0, Math.PI * 2);
+        hctx.fillStyle = 'rgba(229,143,160,0.15)';
+        hctx.fill();
+      }
+
+      if(ecgX > cx + w / 2){
+        phase = 1;
+        ecgPts = [];
+      }
+    }
+
+    function drawParticlesF(){
+      particles.forEach(p => {
+        p.progress = Math.min(p.progress + p.speed, 1);
+        if(p.progress < 0){ p.alpha = 0; return; }
+        const tx = hW / 2 + p.rx, ty = hH / 2 + p.ry;
+        p.x += (tx - p.x) * 0.06;
+        p.y += (ty - p.y) * 0.06;
+        p.alpha = Math.min(p.alpha + 0.04, 1);
+        p.trail.push({ x: p.x, y: p.y });
+        if(p.trail.length > 6) p.trail.shift();
+        const rad = p.r * p.z;
+
+        p.trail.forEach((tr, i) => {
+          hctx.beginPath();
+          hctx.arc(tr.x, tr.y, rad * 0.6, 0, Math.PI * 2);
+          hctx.fillStyle = p.color;
+          hctx.globalAlpha = (i / p.trail.length) * 0.3 * p.alpha;
+          hctx.fill();
+        });
+
+        hctx.globalAlpha = p.alpha;
+        hctx.beginPath();
+        hctx.arc(p.x, p.y, rad, 0, Math.PI * 2);
+        hctx.fillStyle = p.color;
+        hctx.shadowColor = p.color;
+        hctx.shadowBlur = 8 * p.z;
+        hctx.fill();
+        hctx.shadowBlur = 0;
+        hctx.globalAlpha = 1;
+      });
+    }
+
+    function drawGlowF(){
+      const g = hctx.createRadialGradient(hW / 2, hH / 2 - 20, 0, hW / 2, hH / 2 - 20, Math.min(hW, hH) * 0.35);
+      g.addColorStop(0, 'rgba(201,123,132,0.16)');
+      g.addColorStop(1, 'rgba(0,0,0,0)');
+      hctx.fillStyle = g;
+      hctx.fillRect(0, 0, hW, hH);
+    }
+
+    function showHeartText(html, alpha){
+      heartTaglineEl.innerHTML = html;
+      heartTaglineEl.style.color = `rgba(251,243,234,${alpha})`;
+      heartTaglineEl.style.textShadow = `0 0 ${26 * alpha}px #C97B84, 0 0 ${52 * alpha}px #C97B84`;
+    }
+
+    function heartNames(){
+      const lang = (typeof currentLang !== 'undefined') ? currentLang : 'ta';
+      return lang === 'ta'
+        ? { title: 'விஷால் 🖤 கயத்ரி', sub: 'இனிய ஆண்டு விழா' }
+        : { title: 'Vishal 🖤 Gayathri', sub: 'HAPPY ANNIVERSARY' };
+    }
+    const heartTextData = heartNames();
+
+    /* keep the tagline sized and positioned so it stays inside the heart outline,
+       with the name always rendered on a single line */
+    function fitTaglineToHeart(){
+      const cappedWidth = Math.max(120, heartBoundsW * 0.7);
+      const titleLen = Math.max(10, Array.from(heartTextData.title).length);
+      const fontForOneLine = cappedWidth / (titleLen * 0.62);
+      const fontSize = Math.max(10, Math.min(fontForOneLine, cappedWidth * 0.13, heartBoundsH * 0.17));
+      heartTaglineEl.style.maxWidth = cappedWidth + 'px';
+      heartTaglineEl.style.fontSize = fontSize + 'px';
+      heartTaglineEl.style.transform = `translateY(${heartCenterOffsetY}px)`;
+    }
+    fitTaglineToHeart();
+
+    function hFrame(){
+      hctx.fillStyle = 'rgba(5,2,3,0.16)';
+      hctx.fillRect(0, 0, hW, hH);
+      drawStarsF();
+
+      if(phase === 0){
+        drawECGf();
+      }
+
+      if(phase === 1){
+        drawParticlesF();
+        drawGlowF();
+        const arrived = particles.filter(p => p.progress >= 1).length;
+        const ratio = arrived / particles.length;
+
+        if(ratio > 0.6){
+          textAlpha = Math.min(textAlpha + 0.015, 1);
+          const { title, sub } = heartTextData;
+          showHeartText(
+            `<span style="display:block;white-space:nowrap;">${title}</span><span style="font-size:0.34em;letter-spacing:1.5px;color:rgba(217,190,139,${textAlpha})">${sub}</span>`,
+            textAlpha
+          );
+        }
+
+        if(ratio >= 0.95 && !allArrived) allArrived = true;
+        if(allArrived) doneTimer++;
+        if(allArrived && doneTimer > 70 && !completed){
+          completed = true;
+          if(onComplete) onComplete();
+        }
+      }
+      heartAnimId = requestAnimationFrame(hFrame);
+    }
+    heartAnimId = requestAnimationFrame(hFrame);
+  }
+
+  function finishHeartScene(){
+    if(heartDone) return;
+    heartDone = true;
+    if(heartAnimId) cancelAnimationFrame(heartAnimId);
+    heartGate.classList.add('fading');
+    setTimeout(() => {
+      heartGate.classList.remove('active');
+      heartGate.classList.remove('fading');
+      htmlEl.classList.remove('locked');
+      siteContent.classList.add('revealed');
+    }, 900);
+  }
+
+  function playHeartGate(){
+    heartGate.classList.add('active');
+    drawHeartScene(() => {
+      heartCaption.classList.add('show');
+      setTimeout(finishHeartScene, 1600);
+    });
+  }
+  heartSkip.addEventListener('click', (e) => {
+    e.stopPropagation();
+    finishHeartScene();
+  });
+
+  let opened = false;
+  function openGift(){
+    if(opened) return;
+    opened = true;
+    makeBurst();
+    giftGate.classList.add('opening');
+    setTimeout(() => {
+      giftGate.classList.add('hidden');
+      playHeartGate();
+    }, 750);
+  }
+
+  /* ---------------- Photo lightbox (WhatsApp-style tap to view, swipeable) ---------------- */
+  window.__lightboxGallery = [];
+  window.__lightboxIndex = 0;
+
+  function lightboxRenderCurrent(){
+    const img = document.getElementById('lightboxImg');
+    const counter = document.getElementById('lightboxCounter');
+    const prevBtn = document.querySelector('.lightbox-prev');
+    const nextBtn = document.querySelector('.lightbox-next');
+    const gallery = window.__lightboxGallery;
+    img.src = gallery[window.__lightboxIndex];
+    const multi = gallery.length > 1;
+    if(counter){
+      counter.style.display = multi ? '' : 'none';
+      counter.textContent = multi ? (window.__lightboxIndex + 1) + ' / ' + gallery.length : '';
+    }
+    if(prevBtn) prevBtn.style.display = multi ? '' : 'none';
+    if(nextBtn) nextBtn.style.display = multi ? '' : 'none';
+  }
+
+  window.openLightbox = function(src, gallery, index){
+    const overlay = document.getElementById('lightboxOverlay');
+    window.__lightboxGallery = (gallery && gallery.length) ? gallery : [src];
+    window.__lightboxIndex = (typeof index === 'number' && index >= 0) ? index : 0;
+    lightboxRenderCurrent();
+    overlay.classList.add('open');
+    document.documentElement.style.overflow = 'hidden';
+  };
+  window.closeLightbox = function(e){
+    if(e) e.stopPropagation();
+    const overlay = document.getElementById('lightboxOverlay');
+    overlay.classList.remove('open');
+    document.documentElement.style.overflow = '';
+  };
+  window.lightboxPrev = function(e){
+    if(e) e.stopPropagation();
+    const g = window.__lightboxGallery;
+    if(g.length <= 1) return;
+    window.__lightboxIndex = (window.__lightboxIndex - 1 + g.length) % g.length;
+    lightboxRenderCurrent();
+  };
+  window.lightboxNext = function(e){
+    if(e) e.stopPropagation();
+    const g = window.__lightboxGallery;
+    if(g.length <= 1) return;
+    window.__lightboxIndex = (window.__lightboxIndex + 1) % g.length;
+    lightboxRenderCurrent();
+  };
+  document.addEventListener('keydown', (e) => {
+    const overlay = document.getElementById('lightboxOverlay');
+    if(!overlay.classList.contains('open')) return;
+    if(e.key === 'Escape') closeLightbox();
+    if(e.key === 'ArrowLeft') lightboxPrev();
+    if(e.key === 'ArrowRight') lightboxNext();
+  });
+
+  /* Swipe/drag on the fullscreen image to move through the gallery */
+  (function(){
+    const img = document.getElementById('lightboxImg');
+    let startX = 0, dragging = false, moved = false;
+    function ds(x){ dragging = true; moved = false; startX = x; }
+    function dm(x){ if(!dragging) return; if(Math.abs(x - startX) > 6) moved = true; }
+    function de(x){
+      if(!dragging) return;
+      dragging = false;
+      const delta = x - startX;
+      if(Math.abs(delta) > 40){
+        if(delta < 0) lightboxNext(); else lightboxPrev();
+      }
+    }
+    img.addEventListener('touchstart', (e) => ds(e.touches[0].clientX), {passive:true});
+    img.addEventListener('touchmove', (e) => dm(e.touches[0].clientX), {passive:true});
+    img.addEventListener('touchend', (e) => de(e.changedTouches[0].clientX));
+    img.addEventListener('mousedown', (e) => { e.preventDefault(); ds(e.clientX); });
+    window.addEventListener('mousemove', (e) => dm(e.clientX));
+    window.addEventListener('mouseup', (e) => de(e.clientX));
+    img.addEventListener('click', (e) => {
+      if(moved){ e.stopPropagation(); moved = false; }
+    });
+  })();
+
+  /* Wire up plain single/multi photo groups (non-carousel years) as swipeable galleries too */
+  document.querySelectorAll('.y7-photos').forEach((container) => {
+    const photos = Array.from(container.querySelectorAll(':scope > .y7-photo'));
+    if(photos.length === 0) return;
+    const gallery = photos.map((p) => p.querySelector('img').src);
+    photos.forEach((p, i) => {
+      p.onclick = function(e){
+        e.stopPropagation();
+        openLightbox(gallery[i], gallery, i);
+      };
+    });
+  });
+
+  /* Wire up the Year Seven polaroid strip as one swipeable gallery */
+  document.querySelectorAll('.strip').forEach((strip) => {
+    const polaroids = Array.from(strip.querySelectorAll('.polaroid'));
+    if(polaroids.length === 0) return;
+    const gallery = polaroids.map((p) => p.querySelector('img').src);
+    polaroids.forEach((p, i) => {
+      p.onclick = function(e){
+        e.stopPropagation();
+        openLightbox(gallery[i], gallery, i);
+      };
+    });
+  });
+
+  /* ---------------- Read More / Read Less toggle ---------------- */
+  window.toggleReadMore = function(btn){
+    const content = btn.nextElementSibling;
+    const moreLabel = btn.querySelector('span:first-child');
+    const lessLabel = btn.querySelector('span:last-child');
+    const expanded = btn.getAttribute('aria-expanded') === 'true';
+    if(expanded){
+      content.classList.remove('open');
+      moreLabel.hidden = false;
+      lessLabel.hidden = true;
+      btn.setAttribute('aria-expanded', 'false');
+    } else {
+      content.classList.add('open');
+      moreLabel.hidden = true;
+      lessLabel.hidden = false;
+      btn.setAttribute('aria-expanded', 'true');
+    }
+  };
+
+  /* ---------------- Swipeable / auto-advancing photo carousels ---------------- */
+  document.querySelectorAll('.y7-carousel').forEach((carousel) => {
+    const track = carousel.querySelector('.y7-carousel-track');
+    const slides = Array.from(carousel.querySelectorAll('.y7-carousel-slide'));
+    const dots = Array.from(carousel.querySelectorAll('.y7-carousel-dot'));
+    const autoplayMs = parseInt(carousel.dataset.autoplay, 10) || 5000;
+    if(slides.length <= 1) return;
+
+    let index = 0;
+    let timer = null;
+    let startX = 0, currentX = 0, dragging = false, moved = false;
+
+    function render(withTransition){
+      track.style.transition = withTransition ? 'transform 0.45s ease' : 'none';
+      track.style.transform = `translateX(-${index * 100}%)`;
+      dots.forEach((d, i) => d.classList.toggle('active', i === index));
+    }
+    function goTo(i){
+      index = (i + slides.length) % slides.length;
+      render(true);
+    }
+    function startAuto(){
+      stopAuto();
+      timer = setInterval(() => goTo(index + 1), autoplayMs);
+    }
+    function stopAuto(){
+      if(timer){ clearInterval(timer); timer = null; }
+    }
+
+    dots.forEach((d, i) => d.addEventListener('click', (e) => {
+      e.stopPropagation();
+      goTo(i);
+      startAuto();
+    }));
+
+    function dragStart(x){
+      dragging = true;
+      moved = false;
+      startX = x;
+      currentX = x;
+      track.classList.add('dragging');
+      stopAuto();
+    }
+    function dragMove(x){
+      if(!dragging) return;
+      currentX = x;
+      const delta = currentX - startX;
+      if(Math.abs(delta) > 6) moved = true;
+      const percent = (delta / carousel.offsetWidth) * 100;
+      track.style.transition = 'none';
+      track.style.transform = `translateX(calc(-${index * 100}% + ${percent}%))`;
+    }
+    function dragEnd(){
+      if(!dragging) return;
+      dragging = false;
+      track.classList.remove('dragging');
+      const delta = currentX - startX;
+      if(delta < -40) goTo(index + 1);
+      else if(delta > 40) goTo(index - 1);
+      else render(true);
+      startAuto();
+    }
+
+    track.addEventListener('touchstart', (e) => dragStart(e.touches[0].clientX), {passive:true});
+    track.addEventListener('touchmove', (e) => dragMove(e.touches[0].clientX), {passive:true});
+    track.addEventListener('touchend', dragEnd);
+
+    track.addEventListener('mousedown', (e) => { e.preventDefault(); dragStart(e.clientX); });
+    window.addEventListener('mousemove', (e) => dragMove(e.clientX));
+    window.addEventListener('mouseup', dragEnd);
+
+    carousel.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if(moved){ moved = false; return; }
+      const gallery = slides.map((s) => s.querySelector('img').src);
+      openLightbox(gallery[index], gallery, index);
+    });
+
+    render(false);
+    startAuto();
+  });
+
+
+  /* ---------------- Year Seven swipe progress ---------------- */
+  const photoStrip = document.getElementById('photoStrip');
+  const stripBar = document.getElementById('stripBar');
+  if (photoStrip && stripBar) {
+    photoStrip.addEventListener('scroll', () => {
+      const max = photoStrip.scrollWidth - photoStrip.clientWidth;
+      const pct = max > 0 ? (photoStrip.scrollLeft / max) * 100 : 0;
+      stripBar.style.width = Math.max(6, pct) + '%';
+    });
+  }
+
+  /* ---------------- Flying robot mascot ---------------- */
+  const annivRobot = document.getElementById('annivRobot');
+  let robotHideTimer = null;
+  function toggleRobotBubble(){
+    annivRobot.classList.toggle('show-bubble');
+    clearTimeout(robotHideTimer);
+    if(annivRobot.classList.contains('show-bubble')){
+      robotHideTimer = setTimeout(() => {
+        annivRobot.classList.remove('show-bubble');
+      }, 4000);
+    }
+  }
+  annivRobot.addEventListener('click', toggleRobotBubble);
+  annivRobot.addEventListener('keydown', (e) => {
+    if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); toggleRobotBubble(); }
+  });
+
+  /* ---------------- Year tag navigation (tap or swipe) ---------------- */
+  (function(){
+    const tagsWrap = document.querySelector('.year-tags-wrap');
+    const tagsScroller = document.querySelector('.year-tags');
+    const tags = Array.from(document.querySelectorAll('.year-tag'));
+    const yearRows = Array.from({length:7}, (_, i) => document.getElementById('year-' + (i+1)));
+
+    // Tapping/clicking a tag scrolls smoothly to that year
+    tags.forEach(tag => {
+      tag.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = tag.getAttribute('href').slice(1);
+        const target = document.getElementById(targetId);
+        if(!target) return;
+        const offset = tagsWrap ? tagsWrap.offsetHeight + 14 : 14;
+        const top = target.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top, behavior:'smooth' });
+        tags.forEach(t => t.classList.remove('active'));
+        tag.classList.add('active');
+      });
+    });
+
+    // Highlight the active tag as the matching year scrolls into view
+    const rowIO = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          const idx = yearRows.indexOf(entry.target);
+          if(idx === -1) return;
+          tags.forEach(t => t.classList.remove('active'));
+          const activeTag = tags[idx];
+          if(activeTag){
+            activeTag.classList.add('active');
+            activeTag.scrollIntoView({ behavior:'smooth', inline:'center', block:'nearest' });
+          }
+        }
+      });
+    }, { threshold:0.4 });
+    yearRows.forEach(row => { if(row) rowIO.observe(row); });
+
+    // Mouse-drag swipe support for the tag bar on desktop/trackpad
+    // (touch devices already scroll natively via -webkit-overflow-scrolling)
+    if(tagsScroller){
+      let isDown = false, startX = 0, startScroll = 0, moved = false;
+      tagsScroller.addEventListener('mousedown', (e) => {
+        isDown = true; moved = false;
+        startX = e.pageX;
+        startScroll = tagsScroller.scrollLeft;
+      });
+      window.addEventListener('mouseup', () => { isDown = false; });
+      window.addEventListener('mousemove', (e) => {
+        if(!isDown) return;
+        const dx = e.pageX - startX;
+        if(Math.abs(dx) > 4) moved = true;
+        tagsScroller.scrollLeft = startScroll - dx;
+      });
+      // Prevent a dragging gesture from also firing the click/jump
+      tagsScroller.addEventListener('click', (e) => {
+        if(moved){ e.stopPropagation(); e.preventDefault(); }
+      }, true);
+    }
+  })();
+
+  giftGate.addEventListener('click', openGift);
+  giftGate.addEventListener('keydown', (e) => {
+    if(e.key === 'Enter' || e.key === ' '){ openGift(); }
+  });
+  giftGate.setAttribute('tabindex', '0');
+  giftGate.setAttribute('role', 'button');
+  giftGate.setAttribute('aria-label', 'Tap to open your anniversary letter');
+</script>
+
+
+<script>
+  /* ================= EN / TA LANGUAGE TOGGLE ================= */
+  const I18N = {"t1": {"ta": "உனக்காக ஒரு பரிசு", "en": "A Gift, Wrapped For You"}, "t2": {"ta": "&#128420; உன் ஆண்டு விழா கடிதத்தைத் திறக்க தொடு", "en": "&#128420; Tap to open your anniversary letter"}, "t4": {"ta": "வருடங்களில் எழுதப்பட்ட ஒரு கடிதம்", "en": "A Letter, Written In Years"}, "t5": {"ta": "ஏழு வருடங்கள் <em>காதலித்தேன்.</em><br>முதல் <em>ஆண்டு விழா.</em>", "en": "Seven Years <em>Loved.</em><br>First <em>Anniversary.</em>"}, "t6": {"ta": "ஒவ்வொரு சாதாரண வருடத்தையும் நினைவில் நிற்கும் ஓர் அத்தியாயமாக மாற்றியவளுக்காக", "en": "For the one who turned every ordinary year into a chapter worth keeping"}, "t7": {"ta": "காதல்<b>7</b>", "en": "LOVE<b>7</b>"}, "t8": {"ta": "முதல் ஆண்டு விழா<b>1</b>", "en": "FIRST ANNIVERSARY<b>1</b>"}, "t9": {"ta": "தொடங்கு", "en": "Begin"}, "t10": {"ta": "தொடக்கங்களும் அழகான பிணைப்புகளும்", "en": "THE BEGINNINGS &amp; THE BEAUTIFUL BONDS"}, "t11": {"ta": "உன்னையே தேர்ந்தெடுத்த ஏழு வருடங்கள்", "en": "Seven Years of Choosing You"}, "t12": {"ta": "பகிர்ந்த சிரிப்பு, வளர்ச்சி, நிபந்தனையற்ற அன்பு நிறைந்த ஏழு வருடங்கள் வழியாக, உடையாத ஓர் அழகான பிணைப்பை நாம் நெய்தோம். இது நமது அழகான பிணைப்பின் பயணம்.", "en": "Through seven years of shared laughter, growth, and unconditional love, we have woven an unbreakable beautiful bond. This is our beautiful bond journey."}, "t13": {"ta": "வருடம் 1", "en": "Year 1"}, "t14": {"ta": "வருடம் 2", "en": "Year 2"}, "t15": {"ta": "வருடம் 3", "en": "Year 3"}, "t16": {"ta": "வருடம் 4", "en": "Year 4"}, "t17": {"ta": "வருடம் 5", "en": "Year 5"}, "t18": {"ta": "வருடம் 6", "en": "Year 6"}, "t19": {"ta": "வருடம் 7", "en": "Year 7"}, "t20": {"ta": "8ஆம் வகுப்பு · 12&ndash;13", "en": "8th Standard · 12&ndash;13"}, "t21": {"ta": "வருடம் ஒன்று", "en": "Year One"}, "t22": {"ta": "2019&ndash;2020. அப்போது தெரியாத இரண்டு 8ஆம் வகுப்பு பிள்ளைகள் &mdash; ஆனால் பள்ளி நாட்களின் சத்தத்திற்குள் எங்கோ, அமைதியாக காதல் தொடங்கியது.", "en": "2019&ndash;2020. Two 8th standard kids who didn't know it yet &mdash; but somewhere in the noise of school days, love quietly started."}, "t23": {"ta": "\"அதற்கு பெயர் இடும் முன்பே, அது எனக்குள் ஒரு வீட்டைக் கண்டுவிட்டது.\"", "en": "\"Before it had a name, it already had a home in me.\""}, "t24": {"ta": "9ஆம் வகுப்பு · 13&ndash;14", "en": "9th Standard · 13&ndash;14"}, "t25": {"ta": "வருடம் இரண்டு", "en": "Year Two"}, "t26": {"ta": "2020&ndash;2021. உலகமே மூடப்பட்டது. வெறும் இரண்டு மாதங்கள் மட்டுமே உண்மையான படிப்பு, இன்னும் ஆயிரம் நாட்கள் தொலைவிலிருந்து உன்னைப் பற்றி நினைத்தவை.", "en": "2020&ndash;2021. The world shut down. Just two months of real study, and a thousand more days of thinking about you from a distance."}, "t27": {"ta": "\"ஒரு ஊரடங்கு கூட என் உணர்வுகளை அடக்க முடியவில்லை.\"", "en": "\"Even a lockdown couldn't quiet what I felt.\""}, "t112": {"ta": "\"அவளுக்கே தெரியாமல் அவளை ரசித்த நாட்கள் அதிகம்...👀😶‍🌫️ மற்றும் நான் உன்னைப் பார்ப்பதற்கு முன் நீ என்னைப் பார்த்து நான் மயங்கிய தருணம்🫠💘\"", "en": "\"So many days I admired her without her ever knowing...👀😶‍🌫️ And the moment you looked at me before I looked at you — I was smitten🫠💘\""}, "t113": {"ta": "மேலும் படிக்க", "en": "Read More"}, "t114": {"ta": "மறைக்க", "en": "Read Less"}, "t28": {"ta": "10ஆம் வகுப்பு · 14&ndash;15", "en": "10th Standard · 14&ndash;15"}, "t29": {"ta": "வருடம் மூன்று", "en": "Year Three"}, "t30": {"ta": "2021&ndash;2022. 10ஆம் வகுப்பு முடிவதற்குள், வெறும் மூன்று நான்கு மாதங்கள் மட்டும் மீதியிருக்கும்போது, முதன்முறையாக நான் அதை உரக்கச் சொன்னேன்.", "en": "2021&ndash;2022. Right near the end of 10th, with only three or four months of the year left, I finally said it out loud for the first time."}, "t31": {"ta": "\"என் தைரியம் தீருமுன்பே, என் நேரம் தீர்ந்தது.\"", "en": "\"I ran out of time before I ran out of courage.\""}, "t32": {"ta": "11ஆம் வகுப்பு · 15&ndash;16", "en": "11th Standard · 15&ndash;16"}, "t33": {"ta": "வருடம் நான்கு", "en": "Year Four"}, "t34": {"ta": "2022&ndash;2023. நாங்கள் தொலைபேசியில் பேச ஆரம்பித்தோம் &mdash; உன் எண் என் ஃபோனில் என்றென்றைக்கும் சேமிக்கப்பட்டது: 8946012631.", "en": "2022&ndash;2023. We started talking on the phone &mdash; your number saved in mine forever: 8946012631."}, "t35": {"ta": "\"ஓர் எண்ணே என் இன்பாக்ஸ் முழுவதுமானது.\"", "en": "\"A number became the whole of my inbox.\""}, "t36": {"ta": "12ஆம் வகுப்பு · 16&ndash;17", "en": "12th Standard · 16&ndash;17"}, "t37": {"ta": "வருடம் ஐந்து", "en": "Year Five"}, "t38": {"ta": "2023&ndash;2024. எந்த தொடர்பும் இல்லை. நீ நர்சிங் படிப்பில் மூழ்கியிருந்தாய், சிறிது காலத்திற்கு நாம் ஒருவரையொருவர் தொலைத்துவிட்டோம்.", "en": "2023&ndash;2024. No contact. You were buried in nursing studies, and for a while, we simply lost each other."}, "t39": {"ta": "\"தொலைவு என்றுமே நான் மறந்துவிட்டேன் என்று அர்த்தமல்ல.\"", "en": "\"Distance never once meant I forgot.\""}, "t40": {"ta": "கல்லூரி வருடம் 1 · 17&ndash;18", "en": "College Year 1 · 17&ndash;18"}, "t41": {"ta": "வருடம் ஆறு", "en": "Year Six"}, "t42": {"ta": "2024&ndash;2025. முதல் வருடம் முடிந்தவுடன், இன்ஸ்டாகிராமில் உன்னை மீண்டும் கண்டுபிடித்தேன் (21 ஜூலை 2025). பிறகு உன் வாட்ஸ்அப் &mdash; 9080453116. ஆறு நாட்களுக்குப் பிறகு, 27 ஜூலை 2025 அன்று, மீண்டும் சொன்னேன். இந்த முறை, அது நிலைத்தது.", "en": "2024&ndash;2025. Right as first year ended, I found you again on Instagram (21 Jul 2025). Then came your WhatsApp &mdash; 9080453116. Six days later, on 27 Jul 2025, I said it again. This time, it stayed."}, "t43": {"ta": "\"இரண்டாம் வாய்ப்புகள் இரண்டு முறை தட்டாது &mdash; முதல் தட்டலுக்கே பதில் அளித்ததில் மகிழ்ச்சி.\"", "en": "\"Second chances don't knock twice &mdash; I'm glad I answered the first.\""}, "t44": {"ta": "கல்லூரி வருடம் 2 · 18&ndash;19", "en": "College Year 2 · 18&ndash;19"}, "t45": {"ta": "வருடம் ஏழு", "en": "Year Seven"}, "t46": {"ta": "2025&ndash;2026. நமது முதல் அணைப்பு &#129508; (வெள்ளி, 02 ஜன 2026, 12:24 pm). நமது முதல் முத்தம் &#128536; (திங்கள், 05 ஜன 2026, 12:10 pm). கீழே உள்ள புகைப்படங்களில், நமது ஒரு முழு வருடம்.", "en": "2025&ndash;2026. Our first hug &#129508; (Fri, 02 Jan 2026, 12:24 pm). Our first kiss &#128536; (Mon, 05 Jan 2026, 12:10 pm). And a whole year of us, in the photos below."}, "t47": {"ta": "\"உன்னுடன் ஒவ்வொரு 'முதல்' தருணமும் வீடு திரும்பியது போல் இருந்தது.\"", "en": "\"Every 'first' with you felt like coming home.\""}, "t48": {"ta": "27 ஜூலை 2025 &mdash; 27 ஜூலை 2026", "en": "27 Jul 2025 &mdash; 27 Jul 2026"}, "t49": {"ta": "வருடம் ஏழு, புகைப்படங்களில்", "en": "Year Seven, In Photos"}, "t50": {"ta": "ஒவ்வொரு சாதாரண செவ்வாயும், ஒவ்வொரு சினிமா இரவும், ஒவ்வொரு அமைதியான செல்ஃபியும் &mdash; நம்மை இங்கே கொண்டு வந்த வருடம்.", "en": "Every ordinary Tuesday, every movie night, every quiet selfie &mdash; the year that led us here."}, "t51": {"ta": "பிறகு, இறுதியாக, நான் சொன்னேன்", "en": "and then, at last, I said"}, "t52": {"ta": "\"நான் உன்னை காதலிக்கிறேன்.\"", "en": "\"I love you.\""}, "t53": {"ta": "27 ஜூலை 2025 &mdash; இன்று ஓராண்டு முன்பு, ஏழு அமைதியான வருடங்கள் இறுதியாக உரக்கப் பேசின", "en": "27 July 2025 &mdash; one year ago today, seven quiet years finally spoke out loud"}, "t54": {"ta": "நான் சொன்ன ஒரு வருடம்", "en": "One Year Since I Said It"}, "t55": {"ta": "நான் உன்னை எல்லையின்றி காதலிக்கிறேன் &#9854;&#65039; தகம் &#128521;", "en": "I love you infinity &#9854;&#65039; thagam &#128521;"}, "t56": {"ta": "அரிதான வருடம் &mdash; வார்த்தைகள் இன்னும் புத்தம் புதிதாக இருந்த வருடம்", "en": "The rarest year &mdash; the one where the words were still brand new"}, "t57": {"ta": "முந்நூற்று அறுபத்தைந்து நாட்களுக்கு முன்பு, 27 ஜூலை 2025 அன்று, 8ஆம் வகுப்பிலிருந்து அமைதியாக சுமந்து வந்ததை நான் இறுதியாக உரக்கச் சொன்னேன். ஒரு வருடம் கழித்து, ஒரு நொடி கூட தயங்காமல் மீண்டும் சொல்வேன்.", "en": "Three hundred and sixty-five days ago, on 27 July 2025, I finally said out loud what I'd carried quietly since 8th standard. A year in, I'd say it again without a single second of hesitation."}, "t58": {"ta": "சிறுவயதில் நமக்கு உறுதியளிக்கப்பட்ட கற்பனைக் கதை அல்ல காதல் என்று இந்த வருடம் எனக்குக் கற்பித்தது &mdash; இது இன்னும் சிறந்தது. இது உண்மையானது. இது ஒரு வெள்ளிக்கிழமை மதியம் நமது முதல் அணைப்பு, நான் ஒருபோதும் மறக்க முடியாத ஒரு திங்கள்கிழமை நமது முதல் முத்தம், சினிமாவில் சாதாரண செவ்வாய்க்கிழமைகள், கை பிடித்தபடி இருக்கும் சனிக்கிழமைகள்.", "en": "This year taught me love isn't the fairy-tale we were promised as kids &mdash; it's better. It's real. It's our first hug on a Friday afternoon, our first kiss on a Monday I'll never forget, it's the ordinary Tuesdays at the movies and the Saturdays just holding hands."}, "t59": {"ta": "இதை தொடர்ந்து செய்ய முடியும் நமது வடிவத்திற்கு &mdash; வருடத்திற்கு வருடம், ஆண்டு விழாவிற்கு ஆண்டு விழா, நமக்குக் கிடைக்கும் வரை.", "en": "Here's to the version of us that gets to keep doing this &mdash; year after year, anniversary after anniversary, for as long as we're lucky enough to have."}, "t60": {"ta": "என்றென்றும் உன்னுடையவன், விஷால்", "en": "Forever yours, Vishal"}, "t61": {"ta": "இருவருக்கும் வாழ்த்துகள்", "en": "Wishes For Both"}, "t62": {"ta": "நமக்காக நான் விரும்புவது", "en": "What I Wish For Us"}, "t63": {"ta": "ஏழு வருடங்கள் குறித்து", "en": "On seven years"}, "t64": {"ta": "உறுதிப்பாடு", "en": "Steadiness"}, "t65": {"ta": "முன்னால் வரும் வருடங்கள் பின்னால் இருந்தவை போலவே உறுதியாக இருக்கட்டும் &mdash; இரு மனிதர்கள் மீண்டும் மீண்டும் அதே நபரைத் தேர்ந்தெடுத்தபடி.", "en": "May the years ahead be as steady as the ones behind us — two people still choosing the same person, again and again."}, "t66": {"ta": "அடுத்து வருவதைப் பற்றி", "en": "On what follows"}, "t67": {"ta": "குடும்பமும் குழந்தைகளும்", "en": "Family &amp; Children"}, "t68": {"ta": "மகிழ்ச்சியான, ஆரோக்கியமான குடும்பம் என்ற விலைமதிப்பற்ற சேர்க்கையுடன் உங்கள் பிணைப்பு இன்னும் வலுவாக வளரட்டும். பெற்றோர் என்ற அழகான சவால்களை ஒன்றாகக் கடக்கும்போது, பல குழந்தைகளின் கலகலப்பு உங்கள் வீட்டை நிரப்பி, நிபந்தனையற்ற அன்பின் புதிய அடுக்குகளையும் விலைமதிப்பற்ற நினைவுகளையும் கொண்டு வரட்டும்.", "en": "May your bond grow even stronger with the precious addition of a happy, healthy family. We wish for the chatter of multiple children to fill your home, bringing new layers of unconditional love and cherished memories as you navigate the beautiful challenges of parenthood together."}, "t69": {"ta": "சமநிலையான வாழ்க்கை", "en": "A life in balance"}, "t70": {"ta": "சண்டையும் காதலும்", "en": "Fighting &amp; Romance"}, "t71": {"ta": "பயணத்தை முழுவதுமாக அரவணைத்துக் கொள்ளுங்கள். தொடர்பாடல் உண்மையாகவும் நேர்மையாகவும் இருக்க போதுமான சிறு வாக்குவாதங்களும், ஒவ்வொரு நாளையும் சிறப்பாக உணர எல்லையற்ற காதலும் இருக்கட்டும். ஆர்வமும் அமைதியும் நிறைந்த வாழ்நாள் முழுவதற்குமான உறவை இந்த அழகான, உண்மையான சமநிலை உங்களைச் சுமந்து செல்லும்.", "en": "Embrace the journey in its entirety. May there be enough small arguments to keep communication real and honest, and infinitely more romance to make every day feel special. This beautiful, authentic balance will carry you through a lifelong partnership built on both passion and peace."}, "t72": {"ta": "முன்னால் இருப்பதைப் பற்றி", "en": "On what's ahead"}, "t73": {"ta": "இன்னும் அதிகம்", "en": "More"}, "t74": {"ta": "இன்னும் அதிக அமைதியான காலைகள், இன்னும் அதிக அக உணர்வுத் தமாஷுகள், இது போன்ற கடிதங்கள் எழுத தகுதியான இன்னும் அதிக வருடங்கள் &mdash; ஒன்றாக, எப்போதும் ஒன்றாக.", "en": "More quiet mornings, more inside jokes, more years worth writing letters like this one about — together, always together."}, "t75": {"ta": "உனக்கான ஒரு சிறிய ஆச்சரியம்", "en": "A Little Surprise For You"}, "t76": {"ta": "காதல் குறிப்புகள்", "en": "Love Notes"}, "t77": {"ta": "பன்னிரண்டு வயதில் ஏற்கனவே உன்னுடையவனாக &mdash; சில இதயங்கள் சீக்கிரமே தெரிந்துகொள்கின்றன.", "en": "Twelve years old and already yours &mdash; some hearts just know early."}, "t78": {"ta": "8ஆம் வகுப்பு, 2019", "en": "8th Standard, 2019"}, "t79": {"ta": "அந்த வருடம் ஒரு முழு உலகமே நின்றுவிட்டது. உன்மேல் என் உணர்வுகள் ஒருபோதும் நிற்கவில்லை.", "en": "A whole world paused that year. My feelings for you never did."}, "t80": {"ta": "9ஆம் வகுப்பு, 2020", "en": "9th Standard, 2020"}, "t81": {"ta": "மூன்று மாதங்கள் தைரியம், ஒரே ஒரு வாக்கியம், எல்லாமே மாறியது.", "en": "Three months of courage, one sentence, and everything changed."}, "t82": {"ta": "10ஆம் வகுப்பு, 2022", "en": "10th Standard, 2022"}, "t83": {"ta": "நீ இழக்கும் நபர் நீயே ஆக இருக்கும்போது அமைதி உரக்கக் கேட்கும்.", "en": "Silence is loud when the person you're missing is you."}, "t84": {"ta": "12ஆம் வகுப்பு, 2024", "en": "12th Standard, 2024"}, "t85": {"ta": "27.07.2025 &mdash; ஏழு வருடங்களின் அமைதி இறுதியாகப் பேசிய நாள்.", "en": "27.07.2025 &mdash; the day seven years of quiet finally spoke."}, "t86": {"ta": "ஒப்புதல் நாள்", "en": "Confession Day"}, "t87": {"ta": "முதன்முறையாக என்னைச் சுற்றி உன் கைகள் &mdash; எனக்கு இருந்த ஒவ்வொரு பயமும் மறைந்தது.", "en": "Your arms around me for the first time &mdash; and every fear I had, gone."}, "t88": {"ta": "முதல் அணைப்பு, 02 ஜன 2026", "en": "First Hug, 02 Jan 2026"}, "t89": {"ta": "ஒரு திங்கள்கிழமை மதியம், 12:10 pm &mdash; கற்பனை செய்வதை நிறுத்திவிட்டு அதை வாழத் தொடங்கிய அந்த நிமிடம்.", "en": "A Monday afternoon, 12:10 pm &mdash; the exact minute I stopped imagining and started living it."}, "t90": {"ta": "முதல் முத்தம், 05 ஜன 2026", "en": "First Kiss, 05 Jan 2026"}, "t91": {"ta": "ஏழு வருடங்கள் அமைதியாக உன்னை காதலித்தேன். ஒரு வருடம் உரக்க காதலிக்கிறேன்.", "en": "Seven years of loving you quietly. One year of loving you out loud."}, "t92": {"ta": "இன்று, 27 ஜூலை 2026", "en": "Today, 27 Jul 2026"}, "t93": {"ta": "இனிய ஆண்டு விழா, என் அன்பே", "en": "Happy Anniversary, my love"}, "t94": {"ta": "விஷால் <span class=\"heart-inline\">&#128420;</span> கயத்ரி &#9854;&#65039;", "en": "Vishal <span class=\"heart-inline\">&#128420;</span> Gayathri &#9854;&#65039;"}, "t95": {"ta": "ஏழு வருட காதல் &middot; முதல் ஆண்டு விழா", "en": "Seven Years Love &middot; First Anniversary"}, "t96": {"ta": "செவ்வாய்", "en": "Tuesday"}, "t97": {"ta": "சனிக்கிழமை", "en": "Saturday"}, "t98": {"ta": "இருட்டில் சினிமா இரவு தின்பண்டங்கள்", "en": "Movie night snacks in the dark"}, "t99": {"ta": "அவதார்: ஃபயர் அண்ட் ஆஷ் · கிருஷ்ணாலயா", "en": "Avatar: Fire and Ash · Krishnalaya"}, "t100": {"ta": "பாப்கார்ன், கண்ணாடிகள், டிக்கெட் துண்டு", "en": "Popcorn, glasses, ticket stub"}, "t101": {"ta": "நெருக்கமாகவும் அமைதியாகவும்", "en": "Close and quiet"}, "t102": {"ta": "12:07 pm · திரையரங்கு", "en": "12:07 pm · the movies"}, "t103": {"ta": "கைகள், பேச்சுக்கிடையே", "en": "Hands, mid-conversation"}, "t104": {"ta": "10:51 am · கை பிடித்தபடி", "en": "10:51 am · holding on"}, "t105": {"ta": "இரண்டு விரல்கள் மேலே", "en": "Two fingers up"}, "t106": {"ta": "வேர்களுக்கு அடியில்", "en": "Under the roots"}, "t107": {"ta": "அலைந்து திரிதல், நாம் மட்டும்", "en": "Wandering, just us"}, "t109": {"ta": "அம்மாவுடன்", "en": "With Amma"}, "t110": {"ta": "நாம், வடிகட்டப்படாமல்", "en": "Us, unfiltered"}, "t111": {"ta": "இன்னும் கை பிடித்தபடி — ஒரு வருடம் ஆனது", "en": "Still holding hands — one year in"}, "robotBubble": {"ta": "இனிய ஆண்டு விழா,<br>தி குள்ளாச்சி! &#128420;", "en": "Happy Anniversary,<br>Di Kullachi! &#128420;"}, "t108": {"ta": "மகிழ்ச்சி.", "en": "happiness."}, "t115": {"ta": "தவிர்", "en": "Skip"}, "t116": {"ta": "ஒவ்வொரு கோடும், ஏழு வருடங்களால் வரையப்பட்டது.", "en": "Every line, seven years in the making."}};
+  let currentLang = 'ta';
+  function applyLang(lang){
+    for(const id in I18N){
+      const el = document.getElementById(id);
+      if(el) el.innerHTML = I18N[id][lang];
+    }
+    document.documentElement.lang = lang;
+    document.title = (lang === 'ta') ? 'ஏழு வருடங்கள். ஒரே சபதம்.' : 'Seven Years. One Vow.';
+    const btn = document.getElementById('langToggle');
+    if(btn) btn.textContent = (lang === 'ta') ? 'EN' : 'த';
+    currentLang = lang;
+  }
+  const langToggleBtn = document.getElementById('langToggle');
+  if(langToggleBtn){
+    langToggleBtn.addEventListener('click', () => {
+      applyLang(currentLang === 'ta' ? 'en' : 'ta');
+    });
+  }
+  applyLang('en'); /* English shown first; tap the button to switch to Tamil */
+
+  const bgAudio = document.getElementById('bgAudio');
+  const audioToggleBtn = document.getElementById('audioToggle');
+  const iconPlay = document.getElementById('audioIconPlay');
+  const iconPause = document.getElementById('audioIconPause');
+  if(audioToggleBtn && bgAudio){
+    audioToggleBtn.addEventListener('click', () => {
+      if(bgAudio.paused){
+        bgAudio.play().catch(() => {});
+      } else {
+        bgAudio.pause();
+      }
+    });
+    bgAudio.addEventListener('play', () => {
+      iconPlay.style.display = 'none';
+      iconPause.style.display = '';
+    });
+    bgAudio.addEventListener('pause', () => {
+      iconPlay.style.display = '';
+      iconPause.style.display = 'none';
+    });
+  }
+</script>
+</body>
+</html>
